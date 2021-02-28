@@ -15,7 +15,7 @@ def fizzbuzz(fizz, buzz, topNumber):
     buzz : TYPE positive int
         DESCRIPTION. 
     topNumber : TYPE positive int > 0
-        DESCRIPTION.
+        DESCRIPTION.exit
 
     Returns
     -------
