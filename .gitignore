@@ -4,3 +4,4 @@ ocw_env/
 **/*.cfg
 **/include
 **/lib
+**/Scripts
