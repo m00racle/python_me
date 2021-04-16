@@ -5,6 +5,8 @@ ocw_env/
 **/include
 **/lib
 **/Scripts
-6-006_python/**/problem.py
+6-006_python/rec01/problem.py
+6-006_python/rec01/problem1D.py
+6-006_python/ps1/problem.py
 6-006_python/**/trace.jsonp
 6-006_python/ps1/problem.py
