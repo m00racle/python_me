@@ -34,11 +34,11 @@ def getSaveFilename(default = None):
     if filename == "" and not (default is None):
         filename = default
 
-    if os.path.exists(filename):
+    if os.path.exists(workingDir + filename):
         print("The file %s already exists." % filename)
         prompt = ("Overwrite (o), enter another name (f), or cancel (c)? ")
         
-        check = input(workingDir + prompt)
+        check = input(prompt)
         while (check != "o" and check != "f" and check != "c"):
             check = input(prompt)
 
