@@ -5,5 +5,5 @@ ocw_env/
 **/include
 **/lib
 **/Scripts
-6-006_python/**/problem*
+6-006_python/**/problem.py
 6-006_python/**/trace.jsonp
