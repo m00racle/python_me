@@ -24,6 +24,7 @@ def getSaveFilename(default = None):
     the user wants to overwrite it.
     """
 
+    workingDir = "./6-006_python/ps1/"
     prompt = "Enter a file name to save to"
     if default is not None:
         prompt += (" (default: %s)" % default)
@@ -33,7 +34,7 @@ def getSaveFilename(default = None):
     if filename == "" and not (default is None):
         filename = default
 
-    if os.path.exists(filename):
+    if os.path.exists(workingDir + filename):
         print("The file %s already exists." % filename)
         prompt = ("Overwrite (o), enter another name (f), or cancel (c)? ")
         
@@ -42,10 +43,10 @@ def getSaveFilename(default = None):
             check = input(prompt)
 
         if check == "o":
-            return filename
+            return workingDir + filename
         elif check == "f":
             return getSaveFilename(default)
         elif check == "c":
             return None
 
-    return "./6-006_python/ps1/" + filename
+    return workingDir + filename
