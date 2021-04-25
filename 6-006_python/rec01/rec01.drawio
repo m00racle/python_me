@@ -1,0 +1,223 @@
+<mxfile host="app.diagrams.net" modified="2021-04-16T18:03:40.155Z" agent="5.0 (Windows)" etag="Nmy2N3VgXoXEeBohYI70" version="14.6.1" type="github" pages="2">
+  <diagram id="xb4w2ompUr15TL0CYtpc" name="algorithm1D">
+    <mxGraphModel dx="780" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-7" value="import" style="shape=umlFrame;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" width="140" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-1" value="&lt;div&gt;utils&lt;br&gt;&lt;/div&gt;" style="html=1;" parent="1" vertex="1">
+          <mxGeometry x="57" y="40" width="110" height="50" as="geometry" />
+        </mxCell>
+        <UserObject label="json" link="https://docs.python.org/3/library/json.html" id="r89_tPx3S2DM9Vizq9bR-2">
+          <mxCell style="html=1;" parent="1" vertex="1">
+            <mxGeometry x="57" y="120" width="110" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-3" value="&lt;div&gt;algorithms&lt;/div&gt;" style="html=1;" parent="1" vertex="1">
+          <mxGeometry x="57" y="200" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-4" value="peak" style="html=1;" parent="1" vertex="1">
+          <mxGeometry x="57" y="280" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-5" value="trace" style="html=1;" parent="1" vertex="1">
+          <mxGeometry x="57" y="360" width="110" height="50" as="geometry" />
+        </mxCell>
+        <UserObject label="sys" link="https://docs.python.org/3.8/library/sys.html?highlight=sys#module-sys" id="r89_tPx3S2DM9Vizq9bR-6">
+          <mxCell style="html=1;" parent="1" vertex="1">
+            <mxGeometry x="57" y="440" width="110" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-8" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;algorithm1: &lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;problem = [1D matrix]&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;trace = &lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="150" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="r89_tPx3S2DM9Vizq9bR-9" target="r89_tPx3S2DM9Vizq9bR-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-9" value="&lt;h1&gt;Algorithm peak finding for 1D list&lt;/h1&gt;&lt;div&gt;this algorithm is limited to finding the peak of 1D matrix in the form of list called problem. If the peak is not found then return half of the problem&lt;br&gt;&lt;/div&gt;" style="text;html=1;fillColor=#ffe6cc;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;dashed=1;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="460" y="60" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="r89_tPx3S2DM9Vizq9bR-11" target="r89_tPx3S2DM9Vizq9bR-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-21" value="loadProblem(file)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-13" vertex="1" connectable="0">
+          <mxGeometry x="-0.275" relative="1" as="geometry">
+            <mxPoint y="-26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="r89_tPx3S2DM9Vizq9bR-11" target="r89_tPx3S2DM9Vizq9bR-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-24" value="&lt;div&gt;problem=&lt;/div&gt;&lt;div&gt;loadProblem(&lt;/div&gt;&lt;div&gt;utils.getOpenFimeName(String))&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-23" vertex="1" connectable="0">
+          <mxGeometry x="-0.7808" y="-3" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="r89_tPx3S2DM9Vizq9bR-11" target="r89_tPx3S2DM9Vizq9bR-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-27" value="&lt;div&gt;problem = &lt;br&gt;&lt;/div&gt;&lt;div&gt;loadProblem(sys.argv[1])&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-26" vertex="1" connectable="0">
+          <mxGeometry x="0.3799" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=17;" parent="1" source="r89_tPx3S2DM9Vizq9bR-11" target="r89_tPx3S2DM9Vizq9bR-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="218" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-33" value="&lt;div&gt;algorithm=&lt;/div&gt;&lt;div&gt;[(&quot;Algorithm1&quot;,algorithm1)]&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-32" vertex="1" connectable="0">
+          <mxGeometry x="0.0596" y="2" relative="1" as="geometry">
+            <mxPoint y="88" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-36" value="&lt;div&gt;peak = &lt;br&gt;&lt;/div&gt;&lt;div&gt;function(problem, trace)&lt;/div&gt;&lt;div&gt;function here algorithm1&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-32" vertex="1" connectable="0">
+          <mxGeometry x="-0.8471" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-227" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;jumpStyle=arc;jumpSize=10;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="r89_tPx3S2DM9Vizq9bR-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="740" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="260" y="740" />
+              <mxPoint x="260" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-35" value="&lt;div&gt;tracer = &lt;br&gt;&lt;/div&gt;&lt;div&gt;trace.TraceRecord()&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFF2CC;labelBorderColor=#000000;" parent="r89_tPx3S2DM9Vizq9bR-34" vertex="1" connectable="0">
+          <mxGeometry x="0.2" y="-1" relative="1" as="geometry">
+            <mxPoint y="181" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-37" value="steps.append(tracer.sequence)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-34" vertex="1" connectable="0">
+          <mxGeometry x="0.0232" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;jumpStyle=arc;jumpSize=10;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="r89_tPx3S2DM9Vizq9bR-11" target="r89_tPx3S2DM9Vizq9bR-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-20" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="370" y="870" />
+              <mxPoint x="10" y="870" />
+              <mxPoint x="10" y="145" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-40" value="json.dump({....}), traceFile)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#FFF2CC;labelBorderColor=#000000;" parent="r89_tPx3S2DM9Vizq9bR-39" vertex="1" connectable="0">
+          <mxGeometry x="-0.6599" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-11" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;main&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;sys.argv&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="330" y="730" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="r89_tPx3S2DM9Vizq9bR-12" target="r89_tPx3S2DM9Vizq9bR-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-25" value="matrix=convertFrom1D(list[variable])" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=10;" parent="1" source="r89_tPx3S2DM9Vizq9bR-12" target="r89_tPx3S2DM9Vizq9bR-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-22" value="peak.createProblem(matrix)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#000000;labelBackgroundColor=#FFF2CC;" parent="r89_tPx3S2DM9Vizq9bR-18" vertex="1" connectable="0">
+          <mxGeometry x="-0.1918" y="4" relative="1" as="geometry">
+            <mxPoint x="4" y="70" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-12" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;loadProblem: &lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;peak.createProblem(matrix)&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;file (string) = &lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;variable (string)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="570" y="570" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-16" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;convertFrom1D&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;list (List[])&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="660" y="340" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="r89_tPx3S2DM9Vizq9bR-28" target="r89_tPx3S2DM9Vizq9bR-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-28" value="&lt;div&gt;Convert from a list to a matrix &lt;br&gt;&lt;/div&gt;&lt;div&gt;with the appropriate dimension&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="620" y="270" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="r89_tPx3S2DM9Vizq9bR-30" target="r89_tPx3S2DM9Vizq9bR-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r89_tPx3S2DM9Vizq9bR-30" value="&lt;div&gt;Loads a 1D peak problem from a Python file&lt;/div&gt;&lt;div&gt;and constructs a PeakProblem from it&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="540" y="810" width="260" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="0vza-yyvycXDuIlj91U3" name="peak">
+    <mxGraphModel dx="780" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-0" />
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-1" parent="DlFMmZeLcxjxOBzdtOR1-0" />
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-2" value="trace" style="html=1;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-1">
+          <mxGeometry x="40" y="40" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-3" value="PeakProblem(object)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-1">
+          <mxGeometry x="370" y="40" width="395" height="372" as="geometry">
+            <mxRectangle x="260" y="290" width="100" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-4" value="+ array: array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="26" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-8" value="+ bounds : array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="52" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-9" value="+ startRow: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="78" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-10" value="+ startCol : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="104" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-11" value="+ numRow: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="130" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-12" value="+ numCol: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="156" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="182" width="395" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-6" value="+ get: array" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="190" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-13" value="+ getBetterNeighbour(location, trace): tuple" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="216" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-14" value="+ getMaximum(location, trace): location" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="242" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-15" value="+ isPeak(location): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="268" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-16" value="+ getSubproblem(bounds): PeakProblem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="294" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-17" value="+ getSubproblemContaining(boundList, location): subProblem" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="320" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-18" value="+ getLocationInSelf (problem, location): tuple(int, int)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry y="346" width="395" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-19" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;getDimensions:tuple(int,int)&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;array: List&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-1">
+          <mxGeometry x="40" y="200" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="DlFMmZeLcxjxOBzdtOR1-1" source="DlFMmZeLcxjxOBzdtOR1-20" target="DlFMmZeLcxjxOBzdtOR1-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DlFMmZeLcxjxOBzdtOR1-20" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center ; text-decoration: underline&quot;&gt;&lt;b&gt;createProblem: PeakProblem&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;array: List&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="DlFMmZeLcxjxOBzdtOR1-1">
+          <mxGeometry x="40" y="360" width="210" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
