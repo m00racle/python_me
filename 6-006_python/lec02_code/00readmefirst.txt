@@ -5,6 +5,12 @@ This is because the location of the python.exe virtual environment is different 
 To simplify things I want to test relative address:
 1. first you must be in the python_me/6-006_python/lec02_code folder
 2. then use this relative address:
-../../ocw_env/Scripts/python.exe ./docdist1.py <filename1> <filename2>
+../../ocw_env/Scripts/python.exe ./<docdist> <filename1> <filename2>
 
 It worked. A bit tideous but it will make the program runs agnostic to file system. In case this program is running on different machine the relative command will always work.
+
+WARNING: some texts are so long that it will take some time to finish the document distance analysis. Reccommending to use t1 and t2 as basis for initial testing runs.
+
+TODO: the docdist4.py still has bug in the count_frequency() function. 
+TypeError: 'dict_items' object is not subscriptable
+https://stackoverflow.com/questions/58183904/how-to-fix-typeerror-dict-keys-object-is-not-subscriptable
