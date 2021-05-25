@@ -117,6 +117,7 @@ def insertion_sort(A):
     modified to adjust for fact that Python arrays use 
     0-indexing.
     """
+
     for j in range(len(A)):
         key = A[j]
         # insert A[j] into sorted sequence A[0..j-1]
@@ -187,6 +188,14 @@ def vector_angle(L1,L2):
 def main():
     if len(sys.argv) != 3:
         print ("Usage: docdist4.py filename_1 filename_2")
+        #-- FOR DEBUG PURPOSES ONLY
+        filename_1 = 'E:\\python_me\\6-006_python\\lec02_code\\t1.verne.txt'
+        filename_2 = 'E:\\python_me\\6-006_python\\lec02_code\\t2.bobsey.txt'
+        sorted_word_list_1 = word_frequencies_for_file(filename_1)
+        sorted_word_list_2 = word_frequencies_for_file(filename_2)
+        distance = vector_angle(sorted_word_list_1,sorted_word_list_2)
+        print ("The distance between the documents is: %0.6f (radians)"%distance)
+        # --- comment out this after finish debugging!
     else:
         filename_1 = sys.argv[1]
         filename_2 = sys.argv[2]
