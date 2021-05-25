@@ -14,3 +14,4 @@ WARNING: some texts are so long that it will take some time to finish the docume
 TODO: the docdist4.py still has bug in the count_frequency() function. 
 TypeError: 'dict_items' object is not subscriptable
 https://stackoverflow.com/questions/58183904/how-to-fix-typeerror-dict-keys-object-is-not-subscriptable
+the docdist 4,5,and 6 shows the same error.
