@@ -15,3 +15,7 @@ TODO: the docdist4.py still has bug in the count_frequency() function.
 TypeError: 'dict_items' object is not subscriptable
 https://stackoverflow.com/questions/58183904/how-to-fix-typeerror-dict-keys-object-is-not-subscriptable
 the docdist 4,5,and 6 shows the same error.
+
+
+For Debug function other than the VSCODE internal debugger (which require using the central Python debugger) or using Python Debugger (pdb) library: https://docs.python.org/3/library/pdb.html
+This library is not as versatile as the VSCODE debugger since there is no console which display each expression and stack trace. In the pdb library all that function is also available 
