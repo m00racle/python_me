@@ -11,10 +11,13 @@ It worked. A bit tideous but it will make the program runs agnostic to file syst
 
 WARNING: some texts are so long that it will take some time to finish the document distance analysis. Reccommending to use t1 and t2 as basis for initial testing runs.
 
-TODO: the docdist4.py still has bug in the count_frequency() function. 
+
 TypeError: 'dict_items' object is not subscriptable
 https://stackoverflow.com/questions/58183904/how-to-fix-typeerror-dict-keys-object-is-not-subscriptable
 the docdist 4,5,and 6 shows the same error.
+This error is because the object dict.items() is not indexable. This is the case for Python 3.X unlike in the Python 2.7.
+Thus it needed to be changed to list.
+This why in docdist4.py line 106 I change it to list(D.items()) => and this allows the insertion_sort function to works!
 
 
 For Debug function other than the VSCODE internal debugger (which require using the central Python debugger) or using Python Debugger (pdb) library: https://docs.python.org/3/library/pdb.html
