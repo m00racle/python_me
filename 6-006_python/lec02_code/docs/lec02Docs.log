@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.5.19)  31 MAY 2021 14:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.5.19)  31 MAY 2021 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -313,23 +313,40 @@ LaTeX Info: Redefining \nameref on input line 11.
 
  [1
 
-{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./lec02Docs.aux)
+{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<table word frequencies.png, id=22, 230.36063pt x 143.78719pt>
+File: table word frequencies.png Graphic file (type png)
+<use table word frequencies.png>
+Package pdftex.def Info: table word frequencies.png  used on input line 67.
+(pdftex.def)             Requested size: 230.36005pt x 143.78683pt.
+ [2 <./table word frequencies.png>]
+<square frequencies table.jpg, id=30, 380.92313pt x 155.83218pt>
+File: square frequencies table.jpg Graphic file (type jpg)
+<use square frequencies table.jpg>
+Package pdftex.def Info: square frequencies table.jpg  used on input line 79.
+(pdftex.def)             Requested size: 380.92218pt x 155.8318pt.
+<inner product sum table.jpg, id=31, 460.72125pt x 162.6075pt>
+File: inner product sum table.jpg Graphic file (type jpg)
+<use inner product sum table.jpg>
+Package pdftex.def Info: inner product sum table.jpg  used on input line 86.
+(pdftex.def)             Requested size: 368.5775pt x 130.08617pt.
+ [3 <./square frequencies table.jpg> <./inner product sum table.jpg>] [4] (./lec02Docs.aux)
 Package rerunfilecheck Info: File `lec02Docs.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 8855 strings out of 478836
- 129470 string characters out of 5859622
- 438594 words of memory out of 5000000
- 26399 multiletter control sequences out of 15000+600000
- 407744 words of font info for 42 fonts, out of 8000000 for 9000
+ 8898 strings out of 478836
+ 130393 string characters out of 5859622
+ 443594 words of memory out of 5000000
+ 26424 multiletter control sequences out of 15000+600000
+ 408544 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,297b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on lec02Docs.pdf (1 page, 48932 bytes).
+ 60i,6n,63p,308b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on lec02Docs.pdf (4 pages, 212991 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
