@@ -1,8 +1,28 @@
 \documentclass{article}
+
+\usepackage{ulem}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{color}
+\usepackage{listings}
+\lstset{ % General setup for the package
+    language=Python,
+    basicstyle=\small\ttfamily,
+    numbers=left,
+     numberstyle=\tiny,
+    frame=tb,
+    tabsize=4,
+    columns=fullflexible,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    showstringspaces=false,
+    showtabs=false,
+    keepspaces,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue}
+}
 
 \title{Lecture 2 Project: Document Distance}
 \author{Yanuar Heru Prakosa}
@@ -105,5 +125,71 @@
         \item Just remember this is only a basic algorithm on how to measure document distance, many ways can be used to cheat this algorithm thus this kind of measurements always evolving in terms of algorithms. 
         \item Stay tune and keep learning!
     \end{enumerate}
+    \newpage
+    \section{Coding in Python}
+    Now after we know how to formulate the document distance, we can start use it to formulate pseudocode. 
+    The algorithm will be mesured after the pseudocode is implemented into code in python.
+    Each python file here uses different algorithm or should I say method on how to handle the words inside the documents.
+    These words are what used to measure the document distance later on using vector normalized multiplication.
 
+    Well it is better if we research each python file to understand the way they were calculated. 
+    I need to have method in order to debug the code later on to make sense of the algorithms they use.
+    However, preparing method to debug the code is not as simple as it might sounds.
+    For once the built in VSCode debugger does not allow the *args input from the user. 
+    Meanwhile the Python own debug library is lacking in the user interface features.
+
+    If I need to choose between the two, right now I more lean towards the VSCode internal debugger. 
+    I must make some adjustment in the main function in order to put the *args into the system. 
+    I need to make the test document (t1 and t2) still passed into the argument after the main function is called.
+    \begin{lstlisting}
+        def main():
+            if len(sys.argv) != 3:
+                print ("Usage: docdist1.py filename_1 filename_2")
+            else:
+                filename_1 = sys.argv[1]
+                filename_2 = sys.argv[2]
+                sorted_word_list_1 = word_frequencies_for_file(filename_1)
+                sorted_word_list_2 = word_frequencies_for_file(filename_2)
+                distance = vector_angle(sorted_word_list_1,sorted_word_list_2)
+                print ("The distance between the documents is: %0.6f (radians)"%distance)
+    \end{lstlisting}
+    As you can see in the main function if the user does not include additional arguments in the CLI when invoking the docdist program it will invoke warning and stop the program altogether.
+    In order to solve this problem I need to make the run will include the t1.verne.txt and t2.bobsey.txt in the initial parameters.
+    Why we use t1.verne.txt and t2.bobsey.txt? Well because both files are the smallest of all documents in the project.
+    This is merely a test run and debug run to see how the code works.
+    Thus, choosing the smallest file as example for all docdist program (docdist1 to docdist6) will result comparable and comprehensive results.
+
+    In order to make the VSCode built in debugger works I need to modify the main function a bit. 
+    The main idea here is to make the test documents files part of the arguments from the first time debug run is initiated.
+    As we cannot use CLI to run the debug state of the program then I need to modify the main function as this is the function called first on run.
+    Here is the modification of the code:
+    \begin{lstlisting}
+        def main():
+    # import pdb; pdb.set_trace() # <--- this is for debug purpose only
+    if len(sys.argv) != 3:
+        print ("Usage: docdist4.py filename_1 filename_2")
+        #-- FOR DEBUG PURPOSES ONLY
+        filename_1 = 'E:\\python_me\\6-006_python\\lec02_code\\t1.verne.txt'
+        filename_2 = 'E:\\python_me\\6-006_python\\lec02_code\\t2.bobsey.txt'
+        sorted_word_list_1 = word_frequencies_for_file(filename_1)
+        sorted_word_list_2 = word_frequencies_for_file(filename_2)
+        distance = vector_angle(sorted_word_list_1,sorted_word_list_2)
+        print ("The distance between the documents is: %0.6f (radians)"%distance)
+        # --- comment out this after finish debugging!
+    else:
+        filename_1 = sys.argv[1]
+        filename_2 = sys.argv[2]
+        sorted_word_list_1 = word_frequencies_for_file(filename_1)
+        sorted_word_list_2 = word_frequencies_for_file(filename_2)
+        distance = vector_angle(sorted_word_list_1,sorted_word_list_2)
+        print ("The distance between the documents is: %0.6f (radians)"%distance)
+    \end{lstlisting}
+    NOTE: the file paths are in Windows format since the files are stored in the local Windows storage. 
+    I think it will be safer to use Windows path format.
+
+    \subsection{UML Sequence Diagram}
+    I need tool to help me understand how the program works. 
+    As takin notes are too random and the contents are easier to forget, I think I need better methods to make sense how the program works.
+    The Sequence Diagram from UML sounds like a good tool for this job. 
+    Unlike static Class Diagram the Sequence Diagram will record the interaction between function(?) in the program.
 \end{document}
