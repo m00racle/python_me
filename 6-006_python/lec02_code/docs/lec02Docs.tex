@@ -192,4 +192,64 @@
     As takin notes are too random and the contents are easier to forget, I think I need better methods to make sense how the program works.
     The Sequence Diagram from UML sounds like a good tool for this job. 
     Unlike static Class Diagram the Sequence Diagram will record the interaction between function(?) in the program.
+
+    \subsection{Docdist1}
+    In the docdist 1 there is a specification at this:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist1.py - initial version of document distance
+        #
+        # Original version by Ronald L. Rivest on February 14, 2007
+        # Revision by Erik D. Demaine on September 12, 2011
+        #
+        # Usage:
+        #    docdist1.py filename1 filename2
+        #     
+        # This program computes the "distance" between two text files
+        # as the angle between their word frequency vectors (in radians).
+        #
+        # For each input file, a word-frequency vector is computed as follows:
+        #    (1) the specified file is read in
+        #    (2) it is converted into a list of alphanumeric "words"
+        #        Here a "word" is a sequence of consecutive alphanumeric
+        #        characters.  Non-alphanumeric characters are treated as blanks.
+        #        Case is not significant.
+        #    (3) for each word, its frequency of occurrence is determined
+        #    (4) the word/frequency lists are sorted into order alphabetically
+        #
+        # The "distance" between two vectors is the angle between them.
+        # If x = (x1, x2, ..., xn) is the first vector (xi = freq of word i)
+        # and y = (y1, y2, ..., yn) is the second vector,
+        # then the angle between them is defined as:
+        #    d(x,y) = arccos(inner_product(x,y) / (norm(x)*norm(y)))
+        # where:
+        #    inner_product(x,y) = x1*y1 + x2*y2 + ... xn*yn
+        #    norm(x) = sqrt(inner_product(x,x))
+
+    \end{lstlisting}
+    I must admit the specification is a bit long, but this is important since these specifications will be the basis to compare to other algorithms.
+    The basic principle here is:
+    \begin{enumerate}
+        \item read all the lines in both documents that will return list of strings per line in document
+        \item from all of those list of strings they were split into words, hence return list of words.
+        \item then calculate the frequency of each word and put it into list in a list ie: [['0', 3],['an', 42]], means the string zero has 3 times occurance while string word an has 42 occurrance in one document.
+        \item then sort them alphabetically, NOT based on frequency value.
+        \item then begin finding vector distance using dot based inner products.
+    \end{enumerate}
+    Basically, the final steps will be similar across the Docdist algorithms. 
+    However, minor changes might prove useful to increase the processing speed. 
+    For the docdist1.py the processing time is 3.625 with document distance = 0.582 radians.
+
+    \subsection{Docdist2}
+    Now in the Docdist2 there is only one small modification as stated in the top part of its specification:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist2.py - changed concatenate to extend in get_words_from_line_list
+    \end{lstlisting}
+    In the code at the \textbf{get\_words\_from\_line\_list} it is stated that using the List module extend function will make the process more efficient. 
+    The List.extend(List:seq) is a fucntion that will add element of another list into the List that call it. 
+    Other steps are basically the same as the Docdist1.py.
+    However, just by modifying one line it has increase the computation speed.
+    For docdist2.py the processing time is 3.188 seconds with document distance = 0.582 radians.
+    
 \end{document}

@@ -603,9 +603,11 @@ INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT lec02Docs.aux
 INPUT ./lec02Docs.out
 INPUT ./lec02Docs.out
+INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
