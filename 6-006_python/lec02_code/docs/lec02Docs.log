@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.5.19)  4 JUN 2021 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.5.19)  4 JUN 2021 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -356,39 +356,39 @@ LaTeX Info: Redefining \nameref on input line 31.
  [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<table word frequencies.png, id=37, 230.36063pt x 143.78719pt>
+<table word frequencies.png, id=41, 230.36063pt x 143.78719pt>
 File: table word frequencies.png Graphic file (type png)
 <use table word frequencies.png>
 Package pdftex.def Info: table word frequencies.png  used on input line 87.
 (pdftex.def)             Requested size: 230.36005pt x 143.78683pt.
  [2 <./table word frequencies.png>]
-<square frequencies table.jpg, id=45, 380.92313pt x 155.83218pt>
+<square frequencies table.jpg, id=49, 380.92313pt x 155.83218pt>
 File: square frequencies table.jpg Graphic file (type jpg)
 <use square frequencies table.jpg>
 Package pdftex.def Info: square frequencies table.jpg  used on input line 99.
 (pdftex.def)             Requested size: 380.92218pt x 155.8318pt.
-<inner product sum table.jpg, id=46, 460.72125pt x 162.6075pt>
+<inner product sum table.jpg, id=50, 460.72125pt x 162.6075pt>
 File: inner product sum table.jpg Graphic file (type jpg)
 <use inner product sum table.jpg>
 Package pdftex.def Info: inner product sum table.jpg  used on input line 106.
 (pdftex.def)             Requested size: 368.5775pt x 130.08617pt.
- [3 <./square frequencies table.jpg> <./inner product sum table.jpg>] [4] [5] [6] [7] (./lec02Docs.aux)
+ [3 <./square frequencies table.jpg> <./inner product sum table.jpg>] [4] [5] [6] [7] [8] [9] (./lec02Docs.aux)
 Package rerunfilecheck Info: File `lec02Docs.out' has not changed.
-(rerunfilecheck)             Checksum: F4724FA042FE5C96C10B5D8F5A35EDD9;486.
+(rerunfilecheck)             Checksum: 9DF80462C9901040656C88E4865B3842;583.
  ) 
 Here is how much of TeX's memory you used:
- 10907 strings out of 478836
- 156522 string characters out of 5859622
- 1070809 words of memory out of 5000000
- 28322 multiletter control sequences out of 15000+600000
- 410223 words of font info for 52 fonts, out of 8000000 for 9000
+ 10970 strings out of 478836
+ 157363 string characters out of 5859622
+ 1081809 words of memory out of 5000000
+ 28333 multiletter control sequences out of 15000+600000
+ 410569 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,297b,1890s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on lec02Docs.pdf (7 pages, 251589 bytes).
+<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on lec02Docs.pdf (9 pages, 268186 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 96 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

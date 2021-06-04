@@ -251,5 +251,70 @@
     Other steps are basically the same as the Docdist1.py.
     However, just by modifying one line it has increase the computation speed.
     For docdist2.py the processing time is 3.188 seconds with document distance = 0.582 radians.
-    
+    \subsection{Docdist3}
+    In docdist3 there will be more modification. 
+    Basically it started from the docdist2.py code but with one more modification.
+    Here is as written in the docdist3.py specification:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist3.py - improved dot product to exploit sorted order and achieve
+        #               linear instead of quadratic time
+    \end{lstlisting}
+    Meaning most of the code in the diagram for docdist2.py still works in the docdist3.py with some adjustment in the inner\_product function.
+    In docdist2.py the inner\_product function is defined as:
+    \begin{lstlisting}
+        def inner_product(L1,L2):
+        """
+        Inner product between two vectors, where vectors
+        are represented as lists of (word,freq) pairs.
+
+        Example: inner_product([["and",3],["of",2],["the",5]],
+                            [["and",4],["in",1],["of",1],["this",2]]) = 14.0 
+        """
+        sum = 0.0
+        for word1, count1 in L1:
+            for word2, count2 in L2:
+                if word1 == word2:
+                    sum += count1 * count2
+        return sum
+    \end{lstlisting}
+    For the docdist3.py the inner\_product function is defined as:
+    \begin{lstlisting}
+        def inner_product(L1,L2):
+        """
+        Inner product between two vectors, where vectors
+        are represented as alphabetically sorted (word,freq) pairs.
+
+        Example: inner_product([["and",3],["of",2],["the",5]],
+                            [["and",4],["in",1],["of",1],["this",2]]) = 14.0 
+        """
+        sum = 0.0
+        i = 0
+        j = 0
+        while i<len(L1) and j<len(L2):
+            # L1[i:] and L2[j:] yet to be processed
+            if L1[i][0] == L2[j][0]:
+                # both vectors have this word
+                sum += L1[i][1] * L2[j][1]
+                i += 1
+                j += 1
+            elif L1[i][0] < L2[j][0]:
+                # word L1[i][0] is in L1 but not L2
+                i += 1
+            else:
+                # word L2[j][0] is in L2 but not L1
+                j += 1
+        return sum
+    \end{lstlisting}
+    As the L1 and L2 lists already sorted meaning the order of words in both lists already managed alphabetically. 
+    Thus if the same index is not the same then those the inner product of both words will be zero.
+    The word if present in L2 but not present in L1 or vice versa will result zero inner product, thus can be omitted in the sum.
+    \textit{See the Document Distance section to learn more!}.
+
+    Now I know why they must be sorted first. 
+    This make sense now since using the older inner\_product from docdist2.py will cost quadratic time $\mathcal{O}(n)^2$.
+    Meanwhile, the inner\_product function in docdist3.py will cost linear time $\mathcal{O}(n)$.
+    The processing time for docdist3.py is 2.031 seconds, much faster compared to docdist2.py.
+    The difference between quadratic and linear is much significant compared to the difference between docdist1.py to docdist2.py.
+    This is because the docdist2.py still has the same running time or at least similar.
 \end{document}
