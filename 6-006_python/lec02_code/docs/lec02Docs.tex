@@ -317,4 +317,101 @@
     The processing time for docdist3.py is 2.031 seconds, much faster compared to docdist2.py.
     The difference between quadratic and linear is much significant compared to the difference between docdist1.py to docdist2.py.
     This is because the docdist2.py still has the same running time or at least similar.
+
+    \subsection{Docdist4}
+    Now this is the first bug arise. 
+    This is because the docdist4.py uses dictionary to store the frequency data of each word.
+    However, the latest Python 3.x will not treat the dictionary items object as indexable.
+    This will make sorting the data impossible.
+    \begin{lstlisting}
+        def count_frequency(word_list):
+        """
+        Return a list giving pairs of form: (word,frequency)
+        """
+        D = {}
+        for new_word in word_list:
+            if new_word in D:
+                D[new_word] = D[new_word]+1
+            else:
+                D[new_word] = 1
+        return list(D.items())
+    \end{lstlisting}
+    This is the main difference and source of the problem. 
+    As mentioned in the docdist4.py specification:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist4.py - changed count_frequency to use dictionaries instead of lists
+    \end{lstlisting}
+    the result of the count frequency will be contained in a dictionary rather than list like in previous docdist files.
+    Let's learn about dictionary items object first.
+    Here is one example on that:
+    \begin{lstlisting}
+        car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+        }
+
+        x = car.items()
+
+        print(x)
+    \end{lstlisting}
+    The code above will result an object described as:
+    \begin{lstlisting}
+        dict\_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+    \end{lstlisting}
+    Although it seems like a list consist of tuples which contains key value combination of the whole dictionary, it is not a list.
+    List will be able to be indexed, but this object cannot.
+    In order to make it indexable I need to modify it back to list:
+    \begin{lstlisting}
+        car = {
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+        }
+
+        x = list(car.items())
+
+        print(x)
+    \end{lstlisting}
+    The code will returns:
+    \begin{lstlisting}
+        [('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)]
+    \end{lstlisting}
+    This is a list just like before.
+    However, it is different since inside this list is tuples.
+    In previous docdist files it is list inside a list.
+    Moreover, it is supposed to be faster to access dictionary compared to list. \textit{This is need to be verified further!}
+
+    The main question here is the docdist4.py still uses docdist3.py inner product formulation.
+    Since the words for both documents are already put into dictionary it is will be faster just to check if certain word is available in one or another dictionary.
+    However, I need to run debug to find out what happen during the count\_frequency algorithm.
+
+    In the debug run I can see that the list is now list of tuples of (word, frequency) pair sorted alphabetically.
+    This is the only difference between the previous lists from previous docdist.
+    The inner product also use the same algorithm as the docdist3.py thus will have linear time complexity $\mathcal{O}(n)$ as before.
+    Therefore, as the docdist4.py performance is better compared to the docdist3.py is more because of the dictionary logging compared to the list used in previous algorithm.
+    The docdist4.py took 1.547 seconds to finish the processing document distance.
+    This is significantly faster compared to docdist3.py which requre 2.013 seconds to finish the process.
+
+    \subsection*{Pause for a minute}
+    The debug on the docdist4.py suppose to decide on how to solve the bug in docdist5.py and docdist6.py.
+    Both algorithms uses the same dictionary principle thus resulting similar bug as the docdist4.py.
+    So far by converting the dictionary.items object into list of tuples of dictionary items solve the bug.
+    However, does the result validate the solution?
+
+    Is it suppose to be faster using dictionary to log the information compared to append it in a list?
+    Well it supposedly so.
+    For once the indexing in dictionary is not as strict as in a list nor tuple. 
+    Dictionary have keys as pointers to certain values.
+    Thus it is not depending on the index position to address certain value.
+
+    I say it is a good chance the solution is having merit. 
+    Changing it to the list form only supplied the items the indexable feature.
+    It is used in the sort process.
+    However, the latest solution still using the same inner product as previous docdist3 algorithm.
+    Therefore it is by merit that appending to dictionary should be faster compared to list.
+
+    \subsection{Docdist5}
+    
 \end{document}

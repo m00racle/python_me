@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1622807732 "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" "lec02Docs.pdf" "lec02Docs" 1622807734
+["pdflatex"] 1622812251 "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" "lec02Docs.pdf" "lec02Docs" 1622812252
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1621417770 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1621416083 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1621416083 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -97,15 +97,15 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1621421574 5220284 67e31666ab1dc42cb3fe908b5bfa5aa2 ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1621421673 2737011 199ac5d81b2ae5211f59ddad923390fc ""
   "c:/texlive/2021/texmf.cnf" 1621421554 713 e69b156964470283e0530f5060668171 ""
-  "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" 1622807731 17582 cb681b66ac3bb19750803113a87c184a ""
+  "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" 1622812248 22181 6b50844714035caeb552d991e884d23e ""
   "inner product sum table.jpg" 1622452655 36699 0a448ba0a5674880bd2468630d531ed0 ""
-  "lec02Docs.aux" 1622807734 1271 90954e9692df65ee96c26c2b4f8e6038 "pdflatex"
-  "lec02Docs.out" 1622807734 583 9df80462c9901040656c88e4865b3842 "pdflatex"
-  "lec02Docs.tex" 1622807731 17582 cb681b66ac3bb19750803113a87c184a ""
+  "lec02Docs.aux" 1622812252 1503 f8e2b7ee8e64e69326de4167d2f2b152 "pdflatex"
+  "lec02Docs.out" 1622812252 777 262da1399855d4c181cf963891826ca0 "pdflatex"
+  "lec02Docs.tex" 1622812248 22181 6b50844714035caeb552d991e884d23e ""
   "square frequencies table.jpg" 1622452655 26678 254bb3652a86649e6a29ce24c247f3d9 ""
   "table word frequencies.png" 1622452655 32716 355aa006718834cfcc6e5ed5a556cee8 ""
   (generated)
+  "lec02Docs.pdf"
   "lec02Docs.aux"
   "lec02Docs.out"
-  "lec02Docs.pdf"
   "lec02Docs.log"
