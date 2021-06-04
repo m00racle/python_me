@@ -100,7 +100,7 @@ def count_frequency(word_list):
             D[new_word] = D[new_word]+1
         else:
             D[new_word] = 1
-    return D.items()
+    return list(D.items())
 
 ###############################################################
 # Operation 4: sort words into alphabetic order             ###

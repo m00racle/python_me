@@ -413,5 +413,79 @@
     Therefore it is by merit that appending to dictionary should be faster compared to list.
 
     \subsection{Docdist5}
-    
+    Here is the first file I need to really debug. 
+    Now let's begin with its specification first:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist5.py - change get_words_from_string to use string translate and split
+        #
+    \end{lstlisting}
+    This means I need to compare the previous get\_words\_form\_string to the one in the docdist5.py.
+    This is the previous version:
+    \begin{lstlisting}
+        def get_words_from_string(line):
+        """
+        Return a list of the words in the given input string,
+        converting each word to lower-case.
+
+        Input:  line (a string)
+        Output: a list of strings 
+                (each string is a sequence of alphanumeric characters)
+        """
+        word_list = []          # accumulates words in line
+        character_list = []     # accumulates characters in word
+        for c in line:
+            if c.isalnum():
+                character_list.append(c)
+            elif len(character_list)>0:
+                word = "".join(character_list)
+                word = word.lower()
+                word_list.append(word)
+                character_list = []
+        if len(character_list)>0:
+            word = "".join(character_list)
+            word = word.lower()
+            word_list.append(word)
+        return word_list
+    \end{lstlisting}
+    Now we compare with the one in the docdist5.py, here:
+    \begin{lstlisting}
+        def get\_words\_from_string(line):
+        """
+        Return a list of the words in the given input string,
+        converting each word to lower-case.
+
+        Input:  line (a string)
+        Output: a list of strings 
+                (each string is a sequence of alphanumeric characters)
+        """
+        line = line.translate(translation_table)
+        word_list = line.split()
+        return word_list
+    \end{lstlisting}
+    Basically, the docdist5.py uses the Python's built in function to split the senteces into list of words.
+    As for the string translate function this is new for me.
+    To understand this I need to check to the translation\_table variable. 
+    \begin{lstlisting}
+        # global variables needed for fast parsing
+        # translation table maps upper case to lower case and punctuation to spaces
+        # for Python 3.x the string module does not have maketrans method anymore as it is being deprecated
+        # it is being substituted with the str (built in text sequence type).=> str.maketrans is static thus we can use it right away
+        # also the string.uppercse is being deprecated to string.ascii_uppercase, same as string.lowercase to ascii_lowercase
+        translation_table = str.maketrans(string.punctuation+string.ascii_uppercase," "*len(string.punctuation)+string.ascii_lowercase)
+    \end{lstlisting}
+    Basically the tranlation\_table convert all punctuations (white spaces, commas, dots, and alike) to just white spaces (" ") times the length of the punctuations list.
+    Also it converts uppercase into lowercase.
+    Note that the translation\_table uses ascii module since it exchange one character to another based on its ASCII code.
+
+    Now on the comment to the snippet also mentions bugs.
+    The Python 3.x does not support the direct maketrans method.
+    Now the Python will use the str built in library and then use the maketrans method.
+
+    Since docdist5.py also uses dictionary to store the frequency then it has the same bug as the previous docdist4.py.
+    The solution is also the same by adding list(D.items()) code into the count\_frequency function.
+    As this also use the same inner product calculation as the sorted thus the time complexity at that function will be $\mathcal{O}(n)$ or linear.
+    Thus the difference will only be from the get\_words\_from\_string function and the use of built in method translate and split. 
+    Apparently it is a significant improvement once again wiht docdist5.py complete the process in just 0.625 seconds.
+
 \end{document}
