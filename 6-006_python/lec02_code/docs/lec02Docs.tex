@@ -548,4 +548,60 @@
     \end{lstlisting}
     After fixing the problem, the run of the docdist6.py is faster with needed time to complete 0.281 seconds.
     By using merge sort it basically reduce the time complexity of the sorting process from $\mathcal{O}(n)$ or linear to $\mathcal{O}(log_{2}n)$ or logaritmic.
+
+    \subsection{Docdist7}
+    The docdist7.py has this specification:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist7.py - remove sorting altogether via more hashing
+    \end{lstlisting}
+    This means the inner product will not use sorted list or dictionary items. Hence the sort functions are omitted altogether.
+    The check if the word is present in both documents now done by the built in Python dictionary function in. 
+    We need only to check if a key (in this case a word) is present in both dictionary 1 and 2. 
+    If this is true then proceed to inner products of both values of the key
+    \begin{lstlisting}
+        def inner_product(D1,D2):
+            """
+            Inner product between two vectors, where vectors
+            are represented as dictionaries of (word,freq) pairs.
+
+            Example: inner_product({"and":3,"of":2,"the":5},
+                                {"and":4,"in":1,"of":1,"this":2}) = 14.0 
+            """
+            sum = 0.0
+            for key in D1:
+                if key in D2:
+                    sum += D1[key] * D2[key]
+            return sum
+    \end{lstlisting}
+    As the docdist7.py uses the dictionary object as the base of testing thus does not requires sorting, it has no reason to process it as dictionary items object.
+    \textit{See the diagrams for docdist7 where the return from get\_word\_from\_string fucntion just returns dictionary object rather than a list}.
+    Therefore, this avoid the docdist7.py from the same bug hindering docdist4 to docdist6 version.
+    The run speed for this algorithm where we depends on the hash of the python dictionary is quite fast. It finish the whole process in 0.062 seconds.
+    \subsection{Docdist8}
+    The specification of docdist8.py is:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist8.py - treat whole file as a single "line"
+    \end{lstlisting}
+    The way they do this is replacing the file.readline() function which returns list of Strings splitted by lines by default.
+    The \\n notation will be the separator of the words in the list. 
+    In the docdist8.py the read\_file() function uses file.read() method which returs a list consist of the whole words as single string in the list. 
+    \begin{lstlisting}
+        def read_file(filename):
+            """ 
+            Read the text file with the given filename;
+            return a list of the lines of text in the file.
+            """
+            try:
+                f = open(filename, 'r')
+                return f.read()
+            except IOError:
+                print ("Error opening or reading input file: ",filename)
+                sys.exit()
+    \end{lstlisting}
+    I need to see it myself. Thus I prepare docdist8.py for debug run. 
+    The f.read does return a single string object. Since this is a primitive it cannot be indexed immediately.
+    Thus we use a function to convert it into a list of words splitted by non alphanumeric characters (\textit{See Docdist5 section}).
+    This modification make the docdist8.py the fastest algorithm. It only need 0.016 seconds to finish the process.
 \end{document}
