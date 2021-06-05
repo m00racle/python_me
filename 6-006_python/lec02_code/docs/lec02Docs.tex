@@ -487,5 +487,65 @@
     As this also use the same inner product calculation as the sorted thus the time complexity at that function will be $\mathcal{O}(n)$ or linear.
     Thus the difference will only be from the get\_words\_from\_string function and the use of built in method translate and split. 
     Apparently it is a significant improvement once again wiht docdist5.py complete the process in just 0.625 seconds.
+    \subsection{Docdist6}
+    Here is the specification of the docdist6.py:
+    \begin{lstlisting}
+        #!/usr/bin/python
+        # docdist6.py - changed sorting from insertion sort to merge sort
+        #
+    \end{lstlisting}
+    This means the main different in the docdist6.py compared to the previous docdist is in the operation 4 section: sorting alphabetically.
+    The old insertion\_sort function is no longer in use, although in the code this function is still present.
+    For comparison sake perhaps? Well here is the function that taking its place:
+    \begin{lstlisting}
+        def merge_sort(A):
+        """
+        Sort list A into order, and return result.
+        """
+        n = len(A)
+        if n==1: 
+            return A
+        mid = n//2     # floor division
+        L = merge_sort(A[:mid])
+        R = merge_sort(A[mid:])
+        return merge(L,R)
 
+    def merge(L,R):
+        """
+        Given two sorted sequences L and R, return their merge.
+        """
+        i = 0
+        j = 0
+        answer = []
+        while i<len(L) and j<len(R):
+            if L[i]<R[j]:
+                answer.append(L[i])
+                i += 1
+            else:
+                answer.append(R[j])
+                j += 1
+        if i<len(L):
+            answer.extend(L[i:])
+        if j<len(R):
+            answer.extend(R[j:])
+        return answer
+    \end{lstlisting}
+    As you can see it takes two functions to handle the merge sort. One is the merge\_sort(A) function which uses recursion on both direction. 
+    After all the part is divided into their smallest unit the function will call the merge(L,R) to merge it in sorted order, in this case alphabetically.
+    Same as docdist5.py, the docdist6.py also have the same problem in the dictionary items object. I need to convert it into list first.
+    \begin{lstlisting}
+        def count_frequency(word_list):
+            """
+            Return a list giving pairs of form: (word,frequency)
+            """
+            D = {}
+            for new_word in word_list:
+                if new_word in D:
+                    D[new_word] = D[new_word]+1
+                else:
+                    D[new_word] = 1
+            return D.items()
+    \end{lstlisting}
+    After fixing the problem, the run of the docdist6.py is faster with needed time to complete 0.281 seconds.
+    By using merge sort it basically reduce the time complexity of the sorting process from $\mathcal{O}(n)$ or linear to $\mathcal{O}(log_{2}n)$ or logaritmic.
 \end{document}
