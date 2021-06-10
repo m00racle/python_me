@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1622876167 "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" "lec02Docs.pdf" "lec02Docs" 1622876169
+["pdflatex"] 1623293646 "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" "lec02Docs.pdf" "lec02Docs" 1623293647
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1621417770 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1621416083 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1621416083 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -99,15 +99,15 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1621421574 5220284 67e31666ab1dc42cb3fe908b5bfa5aa2 ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1621421673 2737011 199ac5d81b2ae5211f59ddad923390fc ""
   "c:/texlive/2021/texmf.cnf" 1621421554 713 e69b156964470283e0530f5060668171 ""
-  "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" 1622876166 31774 0c9f991a2931c42254de314da71f833a ""
-  "inner product sum table.jpg" 1622452655 36699 0a448ba0a5674880bd2468630d531ed0 ""
-  "lec02Docs.aux" 1622876169 1851 20ae843f78764cd80c9f7d07beab4072 "pdflatex"
-  "lec02Docs.out" 1622876169 1069 d23f0d81536f1226c553433f68620906 "pdflatex"
-  "lec02Docs.tex" 1622876166 31774 0c9f991a2931c42254de314da71f833a ""
-  "square frequencies table.jpg" 1622452655 26678 254bb3652a86649e6a29ce24c247f3d9 ""
-  "table word frequencies.png" 1622452655 32716 355aa006718834cfcc6e5ed5a556cee8 ""
+  "e:/python_me/6-006_python/lec02_code/docs/lec02Docs.tex" 1623293645 33633 27352492595080a13f1540a1abe1ece9 ""
+  "inner product sum table.jpg" 1622876476 36699 0a448ba0a5674880bd2468630d531ed0 ""
+  "lec02Docs.aux" 1623293647 1967 020400e25d35da8cbc5b7840c1d78611 "pdflatex"
+  "lec02Docs.out" 1623293647 1209 a0eab25236ae51136ed13edcd14fad99 "pdflatex"
+  "lec02Docs.tex" 1623293645 33633 27352492595080a13f1540a1abe1ece9 ""
+  "square frequencies table.jpg" 1622876476 26678 254bb3652a86649e6a29ce24c247f3d9 ""
+  "table word frequencies.png" 1622876476 32716 355aa006718834cfcc6e5ed5a556cee8 ""
   (generated)
-  "lec02Docs.out"
-  "lec02Docs.aux"
   "lec02Docs.pdf"
+  "lec02Docs.out"
   "lec02Docs.log"
+  "lec02Docs.aux"

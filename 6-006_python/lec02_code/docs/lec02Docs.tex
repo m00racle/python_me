@@ -82,7 +82,8 @@
     One is "To be or not to be" and the other is "Doubt truth to be a liar". 
     We will calculate the distance between these two documents.
 
-    Now we already list all unique set of words and it can be seen in this table plus its frequencies:
+    Now we already list all unique set of words and it can be seen in this table plus its frequencies: 
+    \textit{FYI: this table is the Document vectors for Document 1 and Document 2}
     \begin{center}
         \includegraphics{table word frequencies}    
     \end{center}
@@ -604,4 +605,29 @@
     The f.read does return a single string object. Since this is a primitive it cannot be indexed immediately.
     Thus we use a function to convert it into a list of words splitted by non alphanumeric characters (\textit{See Docdist5 section}).
     This modification make the docdist8.py the fastest algorithm. It only need 0.016 seconds to finish the process.
+
+    \section{Recitation 2 Notes}
+    So most of the time in the real world you're probably not going to be coming up with new algorithms to do something, but rather you'll have some code and you want to make it faster. 
+    And the first step in making it faster is you realize, how does it do right now? How does it run, which lines are slow, which lines are fast, and where you can make improvements.
+
+    Here is the steps in the Document distance programming:
+    \begin{enumerate}
+        \item So step one, read the document, make it a list of words. 
+        \item Step two, compute the document vector. 
+        \item Step three, take the two document vectors, and compute the angle
+    \end{enumerate}
+    So when I look at a big piece of code, I like to look at it from top down. 
+    So that means I start to the main function, I see who is it calling, I see what everything is trying to do, and then I go into the sub functions and recurves and basically do the same thing. 
+    So I build a tree of who's calling what, and that helps me figure out what's going on.
+
+    So as you go through each of the document distance versions, you want keep a scorecard of the implementation that shows you what the running time is, and this helps you follow what was improved in each implementation.
+    So let's look at this code and figure out its running time. 
+    And the way we're going to do that is:
+    \begin{enumerate}
+        \item we're going to look at each line, 
+        \item we're going to see \textbf{what's the cost for that line} and \textbf{how many times does it run}. 
+        \item once we have those two numbers, we multiply them together 
+        \item we see how much time does the program spend on that line in total.
+    \end{enumerate}
+     
 \end{document}
