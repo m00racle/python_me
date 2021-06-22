@@ -1,15 +1,51 @@
 \documentclass{article}
+% document class two side means margins are set for book like documents
+% report means you can use Chapters book also the same
+% article can only use sections.
+
+%package list and settings!
+
+\usepackage{float} 
+%required for the figures and tables to be located as intended 
+% USE [!ht] after tables or figures => \begin{figure}[!ht]
 
 \usepackage{ulem}
+% required for strikethrough or any line stikes wavy lines accessories 
+
 \usepackage{amsmath}
+% additional for math formulas typing
+
+\usepackage{caption}
+\usepackage{subcaption}
+% required for making captions (auto numbering) for figures and tables
+% the numbering is depends on the documentclass input  
+% if this is report the caption is use the Chapter and sequence in the chapter
+% for article is the section used for numbering.
+
 \usepackage{graphicx}
+% this package is used to \includegraphics[width=...\textwidth]{path}
+\graphicspath{{./images/}}
+
 \usepackage{geometry}
+% this package supposedly to give the user ability to change margins-spaces settings.
+
 \usepackage{hyperref}
+% hyperlink packages used mostly for \href{URL}{text}
+\hypersetup{colorlinks=true, linkcolor=blue}
+
 \usepackage{color}
+\definecolor{anti-flashwhite}{rgb}{0.95, 0.95, 0.96}
+
+
 \usepackage{listings}
+% this package is to facilitate code highlighting for certain programming language
+% WARNING: NOT ALL PROGRAMMING LANGUAGES ARE SUPPORTED BY THIS LINTER.
+% NOTE: You can customize the linter yourself using:
+% \lstdefinestyle{name of style}{key value data on properties.}
 \lstset{ % General setup for the package
     language=Python,
     basicstyle=\small\ttfamily,
+	backgroundcolor=\color{anti-flashwhite}
     numbers=left,
      numberstyle=\tiny,
     frame=tb,
@@ -23,6 +59,7 @@
     commentstyle=\color{red},
     keywordstyle=\color{blue}
 }
+
 
 \title{Lecture 2 Project: Document Distance}
 \author{Yanuar Heru Prakosa}
@@ -240,6 +277,129 @@
     Basically, the final steps will be similar across the Docdist algorithms. 
     However, minor changes might prove useful to increase the processing speed. 
     For the docdist1.py the processing time is 3.625 with document distance = 0.582 radians.
+
+    \subsubsection{Docdist1 Analysis}
+    Here we will try to analyze the time cost of each code line in docdist1. We will not go line by line since it will be very long. Instead we will focus on the functions that is the working points on the code.
+    Here is the table of the functions: (please refer to the \href{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/recitation-videos/MIT6_006F11_rec02_handout.pdf}{Recitation 2 Handout})
+    \begin{table}[H]
+        \begin{center}
+            \caption{Get Words List functions}
+            \begin{tabular}{l|p{5cm}|l|l|p{5cm}}
+                \hline
+                line & code & Once & times & info\\
+                \hline
+                1 & def get\_words\_from\_line\_list(L): & & & def doesn't count\\
+                \hline
+                2 & word\_list = [] &$\mathcal{O}$(1) & 1 & constant time and only  once.\\
+                \hline
+                3 & for line in L: &$\mathcal{O}$(1) & Z & Z= number of lines in Document\\
+                \hline
+                4 & words\_in\_line = get\_words\_from\_ string(line) &$\mathcal{O}$(N) & Z & N=number chars in 1 line \textit{See explanation why this is O(N)}\\ 
+                \hline
+                5 & word\_list = word\_list + words\_in\_ line & \multicolumn{2}{|c|}{$\sum_{i=1}^{Z}i.k$}& $\mathcal{O}$(k + 2K + 3k + \dots + (Z-1)k + zk)** \textit{See calculation below}\\
+                \hline
+                6 & return word\_list  &$\mathcal{O}$(1) & 1 & constant time and only  once.\\
+                \hline
+                7 &  --empty \\ 
+                \hline
+                
+            \end{tabular}
+        \end{center}
+    \end{table}
+    \begin{table}[H]
+        \begin{center}
+            \caption*{Get Words List functions (cont.)}
+            \begin{tabular}{l|l|l|l|p{5cm}}
+                \hline
+                line & code & Once & times & info\\
+                \hline
+                8 & def get\_words\_from\_string(line): & & & def is not included\\
+                \hline
+                9 & word\_list = [] & $\mathcal{O}(1)$& 1 &\\
+                \hline
+                10 & character\_list = [] &$\mathcal{O}(1)$& 1 &\\
+                \hline
+                11 & for c in line: &$\mathcal{O}(1)$& N & N: number of characters in 1 line\\
+                \hline
+                12 & if c.isalnum(): &$\mathcal{O}(1)$& N & N: number of characters in 1 line\\
+                \hline
+                13 & character\_list.append(c) &$\mathcal{O}(1)$& $\frac{\omega}{\omega +1}N$* & $\omega$: number of characters in 1 WORD*\\
+                \hline
+                14 & elif len(character\_list)$>$0: &$\mathcal{O}(1)$& $\frac{N}{\omega +1}$* & $\frac{N}{\omega +1}$* means number of Words in one line\\
+                \hline
+                15 & word = "".join(character\_list) &$\mathcal{O}(\omega)$& $\frac{N}{\omega +1}$* & join will get all characters in the all Words (alphanumerics) = $\omega$\\
+                \hline
+                16 & word = word.lower() &$\mathcal{O}(\omega)$& $\frac{N}{\omega +1}$* & lower will get all characters in the all Words (alphanumerics) = $\omega$\\
+                \hline
+                17 & word\_list.append(word) &$\mathcal{O}(1)$& $\frac{N}{\omega +1}$* & append the whole word means it constant time but repeated for all words in line.\\
+                \hline
+                18 & character\_list = [] &$\mathcal{O}(1)$& $\frac{N}{\omega +1}$* & empty the LIST is constant time and this is repeated for all words in line.\\
+                \hline
+                19 & if len(character\_list) $>$ 0: &$\mathcal{O}(1)$& 1 & This is for the last word in the line IF the end of this word does not have punctuation or whitespaces.\\
+                \hline
+                20 & word = "".join(character\_list) &$\mathcal{O}(\omega)$& 1 & join will get all characters in the all Words (alphanumerics) = $\omega$ but this is only for ONE WORD only\\
+                \hline
+                21 & word = word.lower() &$\mathcal{O}(\omega)$& 1 & lower will get all characters in the all Words (alphanumerics) = $\omega$ but this is only for ONE WORD only\\
+                \hline
+                22 & word\_list.append(word) &$\mathcal{O}(1)$& 1 & this will only apend the whole word once but this is only for ONE WORD only\\
+                \hline
+                23 & return word\_list &$\mathcal{O}(1)$& 1 & return will always constant time once only.\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    Now for the info legend:
+    \begin{flalign*}
+        &N= \text{Number of characters in one line of Strings (alphanumerics and non alphanumerics)}\\
+        &\omega = \text{average Number of characters in one WORD meaning all alphanumeric.}\\
+        &k = \text{the average number of WORDs in one line}
+    \end{flalign*}
+    Assumes:
+    \begin{itemize}
+        \item Since the natural word length is about the same (Most unlikely that one word is 500 characters long), then let's assume the length of word is $\omega$ character long.
+        \item Assumes that one line of Strings is only consist of alphanumeric characters and white space since punctuations are less frequently used in senteces compared to white spaces.
+        \item thus one word will consist of $\omega$ characters and one white space.
+    \end{itemize}
+    Thus:
+    \begin{flalign*}
+        &k = \frac{N}{\omega + 1}\\
+        &\text{Thus for the character\_list.append(c) case each append will cost} \mathcal{O}(1) and\\
+        &\omega . \frac{N}{\omega + 1}\\
+        &\text{NOTE: each append will repeat for number characters times number of words in one line}\\
+    \end{flalign*}
+    Now from the table 1 (continued) from line 8 to 23 we need to multiply the time cost to how many time it repeated. For example in the line 16 where the code is : word = word.lower(), we get total cost of:
+    \[\mathcal{O}(\omega).\frac{N}{\omega + 1} = \mathcal{O}\left(\frac{N.\omega}{\omega + 1}\right)\]
+    As the number of all character in one line ($N$) is significantly bigger than the number of characters in one word ($\omega$) than the total cost of the get\_words\_from\_string function is:
+    \begin{equation}
+        \mathcal{O}(N)
+    \end{equation}
+    This total cost will be used to the function that call this function which is get\_words\_from\_line\_list function. (\textit{See table 1 line 4})
+    Now fot the table 1 line 5, this is where things gets nasty. This is where the time cost is the highest thus it will be the representator here. 
+    So, as the time cost and how many times it is done is quite complex I decided to just make it in the same column as : 
+    \[ \sum_{i=1}^{Z}i.k\]
+    This is because as mentioned above $k$ is the number of word in one line. Thus each time the get\_words\_from\_string function returns a list of words it is in the size of $k$.
+    The bad thing here is the line 5 uses \textbf{word\_list = word\_list + words\_in\_ line} which is costly.
+    This is becaue if there are two list combined using operator + then the time cost of combining the returned list with existing list will always equal of the sum of both list, in other word:
+    \[\mathcal{O}{k + 2k + 3k +\dots+)(Z-1)k + Zk}\]
+    This is an arithmetic series sum. Thus it can be written as:
+    \[\sum_{n=0}^{Z-1}(0+nk)\]
+    As,
+    \[\sum_{n=0}^{z-1}(a + nk) = \frac{z}{2}\left(2a+(z-1)k \right)\]
+    Thus,
+    \[\sum_{n=0}^{Z-1}(0+nk) = \frac{Zk.(Z-1)}{2}\]
+    Since we only care about the asymptotic equation thus this will be:
+    \[\mathcal{O}(Z^2k)\]
+    Note that:
+    \begin{flalign*}
+        &Z = \frac{W}{k}\\
+        &\text{Where:}\\
+        &W = \text{Number of all words in the Document}\\
+        &k = \text{number of lines in the Document}\\
+    \end{flalign*}
+    Thus,
+    \[\mathcal{O}(Z^2k) = \mathcal{O}\left(\frac{W^2k}{k^2} \right)\]
+    As the number of Words is significantly larger than the number of lines in a document, thus:
+    \[\mathcal{O}(Z^2k) = \mathcal{O}(W^2)\]
 
     \subsection{Docdist2}
     Now in the Docdist2 there is only one small modification as stated in the top part of its specification:
