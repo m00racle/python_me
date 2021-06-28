@@ -401,6 +401,72 @@
     As the number of Words is significantly larger than the number of lines in a document, thus:
     \[\mathcal{O}(Z^2k) = \mathcal{O}(W^2)\]
 
+    Now as the command return to the \textbf{word\_frequencies\_for\_file }function. Then the next line call the \textbf{count\_frequency function}. Thus I need deep analysis on this part. 
+
+    The \textbf{word\_frequencies\_for\_file }function call the \textbf{vector\_angle function} which in the end call \textbf{inner\_product function}, this is where we start our analysis.
+    \newpage
+    \begin{table}[H]
+        \begin{center}
+            \caption{count\_frequency function}
+            \begin{tabular}{l|l|l|l|p{5cm}}
+                \hline
+                line & code & Once & times & info\\
+                \hline
+                1 & def count\_frequency(word\_list):& NA & 1 & def not calculated\\
+                \hline
+                2 & L = [] & 1 & 1 & \\
+                \hline
+                3 & for new\_word in word\_list: & 1 & W & W=number of words in the List word-list\\
+                \hline
+                4 & for entry in L: & 1 & L*W & L = number of unique word in the List L \\
+                \hline
+                5 & if new\_word == entry[0]: & 1 & L*W& \\
+                \hline
+                6 & entry[1] = entry[1] + 1 & 1& (W-L)*W & only non unique words come to this\\
+                \hline
+                7 & break & 1 & (W-L)*W & \\
+                \hline
+                8 & else: & 1 & L & Only for unique words gets here in the List\\
+                \hline
+                9 & L.append([new\_word,1]) & 1 & L & \\
+                \hline
+                10 & return L & 1 & 1 & Return is constant time once\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    From this analysis the time cost of the count\_frequency function is :
+    \[\mathcal{O}(LW) \]
+    With L is the number of unique word in the List L, and W is the number of all words (alphanumerics) in the Document.
+
+    \begin{table}[H]
+        \begin{center}
+            \caption{inner\_product function}
+            \begin{tabular}{l|l|l|l|p{5cm}}
+                \hline
+                line & code & Once & times & info\\
+                \hline
+                1 & def inner\_product(L1,L2):&NA&NA&\\
+                \hline
+                2 & sum = 0.0 & 1 & 1 & variable is constant time\\
+                \hline
+                3 & for word1, count1 in L1: & 1 & $L_1$ & L1=number of unique words in list L1\\
+                \hline
+                4 & for word2, count2 in L2: & 1 & $L_2*L_1$ & L2=number of unique words in list L2\\
+                \hline
+                5 & if word1 == word2: & 1 & $L_2*L_1$ & \\
+                \hline
+                6 & sum += count1 * count2 & 1 & $l_1*L_2$ & $l_1$= means unique words in L1 that has same word in L2 \\
+                \hline
+                7 & return sum & 1 & 1 & \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    The time cost for the inner\_product function is: 
+    \[\mathcal{O}(L_1 L_2) \]
+    With $L_1$ and $L_2$ are the number of unique words inside List respectively.
+    Other functions can be analyzed in similar fashion and will results like in the \href{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/recitation-videos/MIT6_006F11_rec02.pdf}{in the recitation note}.
     \subsection{Docdist2}
     Now in the Docdist2 there is only one small modification as stated in the top part of its specification:
     \begin{lstlisting}
