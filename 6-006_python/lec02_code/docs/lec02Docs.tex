@@ -67,8 +67,9 @@
 
 \begin{document}
     \maketitle
+    \tableofcontents
 
-    \section*{The Document Distance}
+    \section{The Document Distance}
     The assignment from the Lecture 2 in 6-006 is related to one called document distance. 
     Thus I need to find out first what is exactly document distance is.  
     \href{http://6.006.scripts.mit.edu/~6.006/spring08/wiki/index.php?title=Document_Distance_Problem_Definition}{Form this MIT discussion webpage}, I learn that document distance will be measured using vector equations.
@@ -855,5 +856,58 @@
         \item once we have those two numbers, we multiply them together 
         \item we see how much time does the program spend on that line in total.
     \end{enumerate}
-     
+    \newpage
+    \section{Summary of Performance Scorecard}
+    This is the summary of all docdist performance scorecard. 
+    \begin{table}[h]
+        \centering
+        \caption{Summary of Performance Scorecard}
+        \begin{tabular}{|p{3cm}|l|l|l|l|} 
+        \hline
+        Method                                & docdist1           & docdist2             & docdist3                                                         & docdist4            \\ 
+        \hline
+        get words from line list          & $O(W^2)$           & $O(W)$               & $O(W)$                                                           & $O(W)$              \\ 
+        \hline
+        count frequency                      & $O(W L)$           & $O(W L)$             & $O(W L)$                                                         & $O(W)$              \\ 
+        \hline
+                                             insertion sort &                    &                      & $O(L^2)$                                                         & $O(L^2)$            \\ 
+        \hline
+        \textbf{word frequencies for file} & $O(W^2)$           & $O(W L)$             & $O(W L)$                                                         & $O(L^2)$            \\ 
+        \hline
+        inner product                        & $O(L_1 L_2)$       & $O(L_1 L_2)$         & $O(L_1 + L_2)$                                                   & $O(L_1 + L_2)$      \\ 
+        \hline
+        \textbf{vector angle}                & $O(L_1^2 + L_2^2)$ & $O(L_1^2 + L_2^2)$   & $O(L_1 + L_2)$                                                   & $O(L_1 + L_2)$      \\ 
+        \hline
+        \textbf{main}                         & $O(W_1^2 + W_2^2$  & $O(W_1 L_1 + W_2L_2)$ & $O(W_1 L_1 + W_2 L_2)$ & $O(L_1^2 + L_2^2)$  \\
+        \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+        \centering
+        \captionsetup{labelformat=empty}
+        \caption{Summary of Performance Scorecard (cont.)}
+        \begin{tabular}{|p{3cm}|l|l|l|l|} 
+        \hline
+        Method                             & docdis5           & docdist6                         & docdist7       & docdist8        \\ 
+        \hline
+        get words from line list           & $O(W)$            & $O(W)$                           & $O(W)$         & $O(W)$          \\ 
+        \hline
+        count frequency                    & $O(W)$            & $O(W)$                           & $O(W)$         & $O(W)$          \\ 
+        \hline
+        sort*      & $O(L^2)$          & \textbf{$O(L.log L)$}            &                &                 \\ 
+        \hline
+        \textbf{word frequencies for file} & $O(L^2)$          & $O(L. log L)$                    & $O(W)$         & $O(W)$          \\ 
+        \hline
+        inner product                      & $O(L_1 + L_2)$    & $O(L_1 + L_2)$                   & $O(L_1 + L_2)$ & $O(L_1 + L_2)$  \\ 
+        \hline
+        \textbf{vector angle}              & $O(L_1 + L_2)$    & $O(L_1 + L_2)$                   & $O(L_1 + L_2)$ & $O(L_1 + L_2)$  \\ 
+        \hline
+        \textbf{main}                      & $O(L_1^2 + L_2^2$ & $O(L_1. log L_1 + L_2. log L_2)$ & $O(W_1 + W_2)$ & $O(W_1 + W_2)$  \\
+        \hline
+        \end{tabular}
+    \end{table}
+    * : for docdist5 we use insertion sort, while docdist6 to docdist8 we use merge sort!
+    
+    Now after this we need to analyze each of the docdist to ensure that each time cost is valid.
 \end{document}
