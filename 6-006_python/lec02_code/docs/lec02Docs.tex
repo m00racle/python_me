@@ -36,6 +36,9 @@
 \usepackage{color}
 \definecolor{anti-flashwhite}{rgb}{0.95, 0.95, 0.96}
 
+%usepackage for cell color on the table:
+% \usepackage[table]{xcolor}
+
 
 \usepackage{listings}
 % this package is to facilitate code highlighting for certain programming language
@@ -891,7 +894,7 @@
         \hline
         Method                             & docdis5           & docdist6                         & docdist7       & docdist8        \\ 
         \hline
-        get words from line list           & $O(W)$            & $O(W)$                           & $O(W)$         & $O(W)$          \\ 
+        get words from line list           & $O(W)$            & $O(W)$                           & $O(W)$         &  \textbf{$O(W)$ }         \\ 
         \hline
         count frequency                    & $O(W)$            & $O(W)$                           & $O(W)$         & $O(W)$          \\ 
         \hline
@@ -899,7 +902,7 @@
         \hline
         \textbf{word frequencies for file} & $O(L^2)$          & $O(L. log L)$                    & $O(W)$         & $O(W)$          \\ 
         \hline
-        inner product                      & $O(L_1 + L_2)$    & $O(L_1 + L_2)$                   & $O(L_1 + L_2)$ & $O(L_1 + L_2)$  \\ 
+        inner product                      & $O(L_1 + L_2)$    & $O(L_1 + L_2)$                   &  \textbf{$O(L_1 + L_2)$} &  \textbf{$O(L_1 + L_2)$}  \\ 
         \hline
         \textbf{vector angle}              & $O(L_1 + L_2)$    & $O(L_1 + L_2)$                   & $O(L_1 + L_2)$ & $O(L_1 + L_2)$  \\ 
         \hline
@@ -909,5 +912,9 @@
     \end{table}
     * : for docdist5 we use insertion sort, while docdist6 to docdist8 we use merge sort!
     
-    Now after this we need to analyze each of the docdist to ensure that each time cost is valid.
+    Now after this 
+    we need to analyze each of the docdist to ensure that each time cost is valid.
+    I will argue that for docdist7 the inner\_product time complexity should have been $O(L)$ rather than $O(L_1 + L_2)$. The one with complexity of $O(L_1 + L_2)$ is the vector\_angle function in the $denominator = \sqrt{inner\_product(D_1,D_1).inner\_product(D_2,D_2)}$.
+
+    Also in docdist8 the get\_words\_form\_line\_list is substituted with get\_words\_from\_file functions. And some other simplifications also implemented. Learn more about this if you have the time.
 \end{document}
