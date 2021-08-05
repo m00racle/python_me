@@ -8,5 +8,5 @@ def f(n):
         return f(n-1) + f(n-2)
 
 # now we test the equation:
-for i in range(20):
+for i in range(10):
     print(f(i))
