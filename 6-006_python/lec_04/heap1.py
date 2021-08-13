@@ -1,5 +1,5 @@
 def parent(i):
-    return int(i/2)
+    return i//2
 
 def left(i):
     return 2*i
@@ -39,12 +39,3 @@ def maxHeapify(A, i):
     #   maxHeapify(A, largest)
     return None
 
-def unitTest():
-    assert parent(5) == 2, "should be 2"
-    assert left(2) == 4, "should return 4"
-    assert right(2) == 5, "should return 5"
-    assert ind(1) == 0, "should return zero"
-    assert ind(0) == None, "should return None"
-    assert ind(5) == 4, 'should return 4'
-
-unitTest()
