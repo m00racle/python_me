@@ -38,5 +38,5 @@ def maxHeapify(A, i):
         A[ind(largest)] = switch
         return maxHeapify(A, largest)
     #   maxHeapify(A, largest)
-    return A
-
+    else: 
+        return A
