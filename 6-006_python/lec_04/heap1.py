@@ -99,3 +99,12 @@ def maxLoopHeapify(A, i):
         # then i = largest to next node
         i = largest
     return A
+
+def buildMaxHeap(A):
+    # A.heap-size = len(A)
+    # for i = lenA//2 (floor division) to 1
+    for i in range(len(A)//2, 0, -1):
+        # Max-heapafy(A, i)
+        A = maxHeapify(A, i)
+    return A
+
