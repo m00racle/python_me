@@ -14,6 +14,7 @@ def ind(i):
         return None
 
 def maxHeapify(A, i):
+    print(A)
     # l = LEFT(i)
     l = left(i)
     # r = RIGHT(i)
@@ -36,6 +37,7 @@ def maxHeapify(A, i):
         switch = A[ind(i)]
         A[ind(i)] = A[ind(largest)]
         A[ind(largest)] = switch
+        return maxHeapify(A, largest)
     #   maxHeapify(A, largest)
-    return None
+    return A
 

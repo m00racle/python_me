@@ -16,5 +16,11 @@ class TestHeap(unittest.TestCase):
         # the right should return 2 times index plus 1
         self.assertEqual(heap.right(3), 7, 'should return 7')
 
+    def test_maxHeapify(self):
+        # prepare the A array:
+        A = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
+        Alast = heap1.maxHeapify(A, 2)
+        self.assertEqual(Alast, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
