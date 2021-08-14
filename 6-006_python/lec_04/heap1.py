@@ -69,3 +69,33 @@ def minHeapify(A, i):
     #   maxHeapify(A, smallest)
     else: 
         return A
+
+def maxLoopHeapify(A, i):
+    # prepare while left(i) loop
+    while (left(i) < len(A)):
+        # l = left(i)
+        l = left(i)
+        # r = right(i)
+        r = right(i)
+        
+        # if A[l] > A[i] then
+        if A[ind(l)] > A[ind(i)]:
+            # largest = l
+            largest = l
+        # else largest = i
+        else: largest = i
+
+        # if A[r] > A[i] then
+        if A[ind(r)] > A[ind(largest)]:
+            # largest = r
+            largest = r
+        # if the largest is i then break for the loop return A
+        if largest == i: break
+        
+        # exchange A[i] with A[largest]
+        switch = A[ind(i)]
+        A[ind(i)] = A[ind(largest)]
+        A[ind(largest)] = switch
+        # then i = largest to next node
+        i = largest
+    return A
