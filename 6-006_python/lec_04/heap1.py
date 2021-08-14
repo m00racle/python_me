@@ -40,3 +40,32 @@ def maxHeapify(A, i):
     #   maxHeapify(A, largest)
     else: 
         return A
+
+def minHeapify(A, i):
+    # same as maxHeapify but this time it is minimum heap properties
+    # l = LEFT(i)
+    l = left(i)
+    # r = RIGHT(i)
+    r = right(i)
+    # if l <= A.heap-size and A[l] < A[i]
+    if l <= len(A) and A[ind(l)] < A[ind(i)]:
+        #   smallest = l
+        smallest = l
+    # else smallest = i
+    else: smallest = i
+
+    # if r <= A.heap-size and A[r] < A[smallest]
+    if r <= len(A) and A[ind(r)] < A[ind(smallest)]:
+        #   smallest = r
+        smallest = r
+    
+    # if smallest != i 
+    if smallest != i:
+        #   exchange A[i] with A[smallest]
+        switch = A[ind(i)]
+        A[ind(i)] = A[ind(smallest)]
+        A[ind(smallest)] = switch
+        return minHeapify(A, smallest)
+    #   maxHeapify(A, smallest)
+    else: 
+        return A

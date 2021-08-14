@@ -19,7 +19,7 @@ class TestHeap(unittest.TestCase):
     def test_maxHeapify(self):
         # prepare the A array:
         A = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
-        Alast = heap1.maxHeapify(A, 2)
+        Alast = heap.maxHeapify(A, 2)
         self.assertEqual(Alast, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
 
     def test_indexing(self):
@@ -27,7 +27,11 @@ class TestHeap(unittest.TestCase):
         with self.assertRaises(ValueError):
             heap.ind(0)
     
-    
+    def test_minHeapify(self):
+        # this is the reversed version of the maxHeapify test
+        A = [1,8,2,3,9,7,14,10,4,16]
+        Amin = heap.minHeapify(A, 2)
+        self.assertEqual(Amin, [1,3,2,4,9,7,14,10,8,16])
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
