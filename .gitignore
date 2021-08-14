@@ -5,6 +5,7 @@ ocw_env/
 **/include
 **/lib
 **/Scripts
+*.pyc
 6-006_python/rec01/problem.py
 6-006_python/rec01/problem1D.py
 6-006_python/ps1/problem.py
@@ -17,3 +18,4 @@ ocw_env/
 6-006_python/lec02_code/docs/lec02Docs.out
 6-006_python/lec02_code/docs/lec02Docs.synctex.gz
 6-006_python/lec02_code/docs/lec02Docs.toc
+6-006_python\lec_04\__pycache__
