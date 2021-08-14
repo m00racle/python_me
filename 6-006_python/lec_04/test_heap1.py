@@ -22,5 +22,12 @@ class TestHeap(unittest.TestCase):
         Alast = heap1.maxHeapify(A, 2)
         self.assertEqual(Alast, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
 
+    def test_indexing(self):
+        self.assertEqual(heap.ind(2), 1, "should be index 1 as i key is 2")
+        with self.assertRaises(ValueError):
+            heap.ind(0)
+    
+    
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

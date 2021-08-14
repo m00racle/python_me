@@ -11,10 +11,9 @@ def ind(i):
     if i > 0:
         return i - 1
     else:
-        return None
+        raise ValueError("the i key index reached 0")
 
 def maxHeapify(A, i):
-    print(A)
     # l = LEFT(i)
     l = left(i)
     # r = RIGHT(i)
