@@ -58,5 +58,14 @@ class TestHeap(unittest.TestCase):
         # assert
         self.assertEqual(Amax, [16,14,10,8,7,9,3,2,4,1])
 
+    def test_heapsort(self):
+        # prepare:
+        A = [16,14,10,8,7,9,3,2,4,1]
+        # action
+        Amax = heap1.heapsort(A)
+        # assert
+        self.assertEqual(Amax, [1,2,3,4,7,8,9,10,14,16])
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
