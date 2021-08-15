@@ -86,7 +86,7 @@ def maxLoopHeapify(A, i, size):
         else: largest = i
 
         # if A[r] > A[i] then
-        if A[ind(r)] > A[ind(largest)]:
+        if r <= size and A[ind(r)] > A[ind(largest)]:
             # largest = r
             largest = r
         # if the largest is i then break for the loop return A
