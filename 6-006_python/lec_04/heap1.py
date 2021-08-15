@@ -13,20 +13,20 @@ def ind(i):
     else:
         raise ValueError("the i key index reached 0")
 
-def maxHeapify(A, i):
+def maxHeapify(A, i, size):
     # l = LEFT(i)
     l = left(i)
     # r = RIGHT(i)
     r = right(i)
     # if l <= A.heap-size and A[l] > A[i]
-    if l <= len(A) and A[ind(l)] > A[ind(i)]:
+    if l <= size and A[ind(l)] > A[ind(i)]:
         #   largest = l
         largest = l
     # else largest = i
     else: largest = i
 
     # if r <= A.heap-size and A[r] > A[largest]
-    if r <= len(A) and A[ind(r)] > A[ind(largest)]:
+    if r <= size and A[ind(r)] > A[ind(largest)]:
         #   largest = r
         largest = r
     
@@ -36,26 +36,26 @@ def maxHeapify(A, i):
         switch = A[ind(i)]
         A[ind(i)] = A[ind(largest)]
         A[ind(largest)] = switch
-        return maxHeapify(A, largest)
+        return maxHeapify(A, largest, size)
     #   maxHeapify(A, largest)
     else: 
         return A
 
-def minHeapify(A, i):
+def minHeapify(A, i, size):
     # same as maxHeapify but this time it is minimum heap properties
     # l = LEFT(i)
     l = left(i)
     # r = RIGHT(i)
     r = right(i)
     # if l <= A.heap-size and A[l] < A[i]
-    if l <= len(A) and A[ind(l)] < A[ind(i)]:
+    if l <= size and A[ind(l)] < A[ind(i)]:
         #   smallest = l
         smallest = l
     # else smallest = i
     else: smallest = i
 
     # if r <= A.heap-size and A[r] < A[smallest]
-    if r <= len(A) and A[ind(r)] < A[ind(smallest)]:
+    if r <= size and A[ind(r)] < A[ind(smallest)]:
         #   smallest = r
         smallest = r
     
@@ -65,14 +65,14 @@ def minHeapify(A, i):
         switch = A[ind(i)]
         A[ind(i)] = A[ind(smallest)]
         A[ind(smallest)] = switch
-        return minHeapify(A, smallest)
+        return minHeapify(A, smallest, size)
     #   maxHeapify(A, smallest)
     else: 
         return A
 
-def maxLoopHeapify(A, i):
+def maxLoopHeapify(A, i, size):
     # prepare while left(i) loop
-    while (left(i) < len(A)):
+    while (left(i) <= size):
         # l = left(i)
         l = left(i)
         # r = right(i)
@@ -100,11 +100,14 @@ def maxLoopHeapify(A, i):
         i = largest
     return A
 
-def buildMaxHeap(A):
+def buildMaxHeap(A, size):
     # A.heap-size = len(A)
     # for i = lenA//2 (floor division) to 1
     for i in range(len(A)//2, 0, -1):
         # Max-heapafy(A, i)
-        A = maxHeapify(A, i)
+        A = maxHeapify(A, i, size)
     return A
 
+def heapsort(A):
+
+    return None

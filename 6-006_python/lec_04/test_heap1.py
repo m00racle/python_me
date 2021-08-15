@@ -18,7 +18,7 @@ class TestHeap(unittest.TestCase):
     def test_maxHeapify(self):
         # prepare the A array:
         A = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
-        Alast = heap1.maxHeapify(A, 2)
+        Alast = heap1.maxHeapify(A, 2, len(A))
         self.assertEqual(Alast, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
 
     def test_indexing(self):
@@ -29,32 +29,32 @@ class TestHeap(unittest.TestCase):
     def test_minHeapify(self):
         # this is the reversed version of the maxHeapify test
         A = [1,8,2,3,9,7,14,10,4,16]
-        Amin = heap1.minHeapify(A, 2)
+        Amin = heap1.minHeapify(A, 2, len(A))
         self.assertEqual(Amin, [1,3,2,4,9,7,14,10,8,16])
 
     def test_maxLoopHeapify(self):
         # prepare the A array:
         A = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
-        Alast = heap1.maxLoopHeapify(A, 2)
+        Alast = heap1.maxLoopHeapify(A, 2, len(A))
         self.assertEqual(Alast, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
 
     def test_break_mid_maxHeapify(self):
         # prepare the A array:
         A = [16, 11, 15, 14, 7, 9, 3, 2, 8, 1]
-        Alast = heap1.maxHeapify(A, 2)
+        Alast = heap1.maxHeapify(A, 2, len(A))
         self.assertEqual(Alast, [16, 14, 15, 11, 7, 9, 3, 2, 8, 1])
 
     def test_break_mid_maxLoopHeapify(self):
         # prepare the A array:
         A = [16, 11, 15, 14, 7, 9, 3, 2, 8, 1]
-        Alast = heap1.maxLoopHeapify(A, 2)
+        Alast = heap1.maxLoopHeapify(A, 2, len(A))
         self.assertEqual(Alast, [16, 14, 15, 11, 7, 9, 3, 2, 8, 1])
 
     def test_build_maxHeapify(self):
         # prepare :
         A = [4,1,3,2,16,9,10,14,8,7]
         # action
-        Amax = heap1.buildMaxHeap(A)
+        Amax = heap1.buildMaxHeap(A, len(A))
         # assert
         self.assertEqual(Amax, [16,14,10,8,7,9,3,2,4,1])
 
