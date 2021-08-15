@@ -109,5 +109,18 @@ def buildMaxHeap(A, size):
     return A
 
 def heapsort(A):
+    # BUILD-MAX-HEAP(A)
+    size = len(A)
+    A = buildMaxHeap(A, size)
+    # for i = len(A) down to 2
+    for i in range(len(A), 1, -1):
+        # exchange A[1] with A[i]
+        temp = A[ind(1)]
+        A[ind(1)] = A[ind(i)]
+        A[ind(i)] = temp
+        # A.heap0size = A.heap-size -1
+        size -= 1
+        # MAX-HEAPIFY(A,1)
+        A = maxHeapify(A, 1, size)
 
-    return None
+    return A
