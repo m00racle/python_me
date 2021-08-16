@@ -1,4 +1,8 @@
 def parent(i):
+    """
+    finding the parent of element i
+    parameter: i (int) : the current element index
+    """
     return i//2
 
 def left(i):
@@ -8,6 +12,11 @@ def right(i):
     return 2*i + 1
 
 def ind(i):
+    """
+    return indexing (start from 0)
+    converting the pseudo code's indexing which starts from 1
+    parameter: i (int) : the pseudo-code index
+    """
     if i > 0:
         return i - 1
     else:
