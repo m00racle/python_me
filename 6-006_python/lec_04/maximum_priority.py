@@ -1,4 +1,5 @@
 import heap1
+import math
 
 ind = heap1.ind
 
@@ -57,3 +58,18 @@ def heapIncreaseKey(A, i, key):
         i = heap1.parent(i)
 
     return A
+
+def maxHeapInsert(A, key):
+    """
+    run max heap insert operation
+    parameter: 
+    A (list) = list of max heapified numvbers
+    key (int) = number to be added into exiting list and heapified
+    """
+    # 1. A.heap-size = A.heap-size + 1
+    # 2. A[A.heap-size] = -inf
+    # note: these steps will be using the .appemd() function
+    A.append(-math.inf)
+    # note: -math.inf = negative infinity
+
+    return heapIncreaseKey(A, len(A), key)

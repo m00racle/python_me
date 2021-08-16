@@ -38,7 +38,14 @@ class TestMaximumPriority(unittest.TestCase):
         with self.assertRaises(ValueError):
             prior.heapIncreaseKey(self.A, 5, 6)
 
-    
+    def test_max_heap_insert(self):
+        # test the max heap insert
+        # key = 15 added to A list then assert the end A condition;
+        self.assertEqual(prior.maxHeapInsert(self.A, 15), [16,15,10,8,14,9,3,2,4,1,7])
+
+    def test_max_heap_insert_add_list_length(self):
+        # test the A list on maxHeapInsert should have n + 1 in len(A)
+        self.assertEqual(len(prior.maxHeapInsert(self.A, 15)), 11)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
