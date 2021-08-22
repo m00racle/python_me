@@ -3,10 +3,19 @@ def ind(i):
     convert index (starts from 1) to Python index (starts from 0)
     param:
     i (int) = index
+
+    return: int
     """
     return i-1
 
 def partition(A, p, r):
+    """
+    process the partition in the quick sort function.
+    param: 
+    A (array) = list of numbers, p (int) = index in the list, r (int)=index in the list (p < r)
+    
+    return: array
+    """
     x = A[ind(r)]
     i = p - 1
     # loop from p to r-1 (inclusive)
@@ -27,6 +36,8 @@ def quicksort(A, p, r):
     quicksort of an Array
     param: 
     A (array): list of numbers, p (int): index in the Array, r (int): index in the Array (p < r)
+
+    return: array
     """
     if p < r :
         q, A = partition(A, p, r)
