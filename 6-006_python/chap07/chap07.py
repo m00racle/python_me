@@ -36,3 +36,10 @@ def quicksort(A, p, r):
     
     return A
 
+if __name__ == '__main__':
+    inputArray = input("input initial array: ")
+    initA = []
+    for number in inputArray.split(","):
+        initA.append(int(number))
+
+    print(quicksort(initA, 1, len(initA)))
