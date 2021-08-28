@@ -1,12 +1,10 @@
-def ind(i):
-    """
-    convert index (starts from 1) to Python index (starts from 0)
-    param:
-    i (int) = index
+import os
+import sys
 
-    return: int
-    """
-    return i-1
+module_path = os.path.normpath(os.path.dirname(__file__) + "/../../modules")
+sys.path.append(module_path)
+
+from idx import idx
 
 def partition(A, p, r):
     """
@@ -16,19 +14,19 @@ def partition(A, p, r):
     
     return: array
     """
-    x = A[ind(r)]
+    x = A[idx(r)]
     i = p - 1
     # loop from p to r-1 (inclusive)
     for j in range(p, r):
-        if A[ind(j)] <= x:
+        if A[idx(j)] <= x:
             i += 1
-            temp = A[ind(i)]
-            A[ind(i)] = A[ind(j)]
-            A[ind(j)] = temp
+            temp = A[idx(i)]
+            A[idx(i)] = A[idx(j)]
+            A[idx(j)] = temp
     
-    temp2 = A[ind(i + 1)]
-    A[ind(i + 1)] = A[ind(r)]
-    A[ind(r)] = temp2
+    temp2 = A[idx(i + 1)]
+    A[idx(i + 1)] = A[idx(r)]
+    A[idx(r)] = temp2
     return i + 1, A
 
 def quicksort(A, p, r):

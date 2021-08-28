@@ -1,10 +1,16 @@
 import heap1
 import math
 
-ind = heap1.ind
+import os
+import sys
+
+module_path = os.path.normpath(os.path.dirname(__file__) + "/../../modules")
+sys.path.append(module_path)
+
+from idx import idx
 
 def heapMax(A):
-    return A[ind(1)]
+    return A[idx(1)]
 
 def heapExtractMax(A, size):
     """
@@ -18,10 +24,10 @@ def heapExtractMax(A, size):
     if size < 1: raise ValueError("heap underflow")
     
     # 3. max = A[1]:
-    maxElement = A[ind(1)]
+    maxElement = A[idx(1)]
 
     # 4. A[1] = A[A.heap-size]
-    A[ind(1)] = A[ind(size)]
+    A[idx(1)] = A[idx(size)]
 
     # 5. A.heap-size = A.heap-size - 1
     size -= 1
@@ -42,17 +48,17 @@ def heapIncreaseKey(A, i, key):
     """
     # 1. if key < A[i]
     # 2.   Error: "new key is smaller than current element's value"
-    if key < A[ind(i)]: raise ValueError("new key is smaller than current element value")
+    if key < A[idx(i)]: raise ValueError("new key is smaller than current element value")
 
     # 3. A[i] = key
-    A[ind(i)] = key
+    A[idx(i)] = key
 
     # 5. while i > 1 and A[PARENT(i)] < A[i]:
-    while i > 1 and A[ind(heap1.parent(i))] < A[ind(i)]:
+    while i > 1 and A[idx(heap1.parent(i))] < A[idx(i)]:
         # 6. exchange A[PARENT(i)] with A[i]
-        temp = A[ind(heap1.parent(i))]
-        A[ind(heap1.parent(i))] = A[ind(i)]
-        A[ind(i)] = temp
+        temp = A[idx(heap1.parent(i))]
+        A[idx(heap1.parent(i))] = A[idx(i)]
+        A[idx(i)] = temp
 
         # i = parent(i)
         i = heap1.parent(i)

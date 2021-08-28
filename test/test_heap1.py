@@ -28,11 +28,6 @@ class TestHeap(unittest.TestCase):
         A = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
         Alast = heap1.maxHeapify(A, 2, len(A))
         self.assertEqual(Alast, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
-
-    def test_indexing(self):
-        self.assertEqual(heap1.ind(2), 1, "should be index 1 as i key is 2")
-        with self.assertRaises(ValueError):
-            heap1.ind(0)
     
     def test_minHeapify(self):
         # this is the reversed version of the maxHeapify test
