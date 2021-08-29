@@ -6,7 +6,7 @@ def idx(i):
 
     return: int
     """
-    if i > 0:
-        return i - 1
-    else:
+    if i < 1:
         raise ValueError("the i key index reached 0")
+    else:
+        return i - 1
