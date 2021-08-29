@@ -39,7 +39,13 @@ class testIdxModule(unittest.TestCase):
         with self.assertRaises(ValueError):
             idx(0.9)
     
-    
+    def test_non_int_input_raise_error(self):
+        """
+        input non integer parameter should raise value error
+        """
+        # TODO this functionality is still under review subject to changes
+        with self.assertRaises(ValueError):
+            idx(3.2)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
