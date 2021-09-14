@@ -4,7 +4,7 @@ tested_path = os.path.normpath(os.path.dirname(__file__) + "/../src/6-006_python
 sys.path.append(tested_path)
 
 import unittest
-from sorting import insertionSort, mergeSort, listSeparator, merge
+from sorting import insertionSort, mergeSort, merge
 
 class TestSorting(unittest.TestCase):
     """

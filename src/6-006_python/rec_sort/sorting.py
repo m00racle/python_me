@@ -20,10 +20,10 @@ def insertionSort(A, ascending = True) -> List:
         key = A[j]
         # insert A[j] into the sorted sequences A[1... j - 1]
         i = j -1
-        while i >= 0 and (A[idx(i)] > key if ascending else A[idx(i)] < key):
-            A[idx(i + 1)] = A[idx(i)]
+        while i >= 0 and (A[i] > key if ascending else A[i] < key):
+            A[i + 1] = A[i]
             i -= 1
-        A[idx(i + 1)] = key
+        A[i + 1] = key
     return A
 
 def merge(lo, hi, ascending) -> List:
@@ -44,20 +44,13 @@ def merge(lo, hi, ascending) -> List:
     i, j = 0, 0
     A = []
     for k in range(0, maxRange):
-        if ascending:
-            if lo[i] <= hi[j]:
-                A.append(lo[i])
-                i += 1
-            else:
-                A.append(hi[j])
-                j += 1
+        if lo[i] <= hi[j] if ascending else lo[i] >= hi[j]:
+            A.append(lo[i])
+            i += 1
         else:
-            if lo[i] >= hi[j]:
-                A.append(lo[i])
-                i += 1
-            else:
-                A.append(hi[j])
-                j += 1
+            A.append(hi[j])
+            j += 1
+    
     return A
 
 def mergeSort(A, ascending = True) -> List:
