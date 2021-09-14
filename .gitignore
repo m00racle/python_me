@@ -19,13 +19,13 @@ ocw_env/
 6-006_python/lec02_code/docs/lec02Docs.synctex.gz
 6-006_python/lec02_code/docs/lec02Docs.toc
 6-006_python\lec_04\__pycache__
-<<<<<<< Updated upstream
+# this is to ignaora all Latex auxilary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.gz
+*.out
+# this is to ignore pycache in tests
+**/__pycache__
 test/__pycache__/test_maximum_priority.cpython-38.pyc.2060459699504
-=======
-src/6-006_python/ps2/writeup/ps2_sol.aux
-src/6-006_python/ps2/writeup/ps2_sol.fdb_latexmk
-src/6-006_python/ps2/writeup/ps2_sol.fls
-src/6-006_python/ps2/writeup/ps2_sol.log
-src/6-006_python/ps2/writeup/ps2_sol.pdf
-src/6-006_python/ps2/writeup/ps2_sol.synctex.gz
->>>>>>> Stashed changes
