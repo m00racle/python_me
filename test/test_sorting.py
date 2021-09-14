@@ -11,9 +11,9 @@ class TestSorting(unittest.TestCase):
     this is test for the sorting.py
     """
     def setUp(self) -> None:
-        self.initA = [31,41,59,26,41,58,1,8,15,22]
-        self.increasing = [1,8,15,22,26,31,41,41,58,59]
-        self.decreasing = [59,58,41,41,31,26,22,15,8,1]
+        self.initA = [31,41,59,26,41,58,1,8,15,22,75]
+        self.increasing = [1,8,15,22,26,31,41,41,58,59,75]
+        self.decreasing = [75,59,58,41,41,31,26,22,15,8,1]
         return super().setUp()
 
     def tearDown(self) -> None:
