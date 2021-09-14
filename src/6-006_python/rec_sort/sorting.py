@@ -16,11 +16,11 @@ def insertionSort(A, ascending = True) -> List:
 
     return list (list of numbers)
     """
-    for j in range(2, len(A) + 1):
-        key = A[idx(j)]
+    for j in range(1, len(A)):
+        key = A[j]
         # insert A[j] into the sorted sequences A[1... j - 1]
         i = j -1
-        while i > 0 and (A[idx(i)] > key if ascending else A[idx(i)] < key):
+        while i >= 0 and (A[idx(i)] > key if ascending else A[idx(i)] < key):
             A[idx(i + 1)] = A[idx(i)]
             i -= 1
         A[idx(i + 1)] = key
