@@ -19,3 +19,8 @@ ocw_env/
 6-006_python/lec02_code/docs/lec02Docs.synctex.gz
 6-006_python/lec02_code/docs/lec02Docs.toc
 6-006_python\lec_04\__pycache__
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.gz
