@@ -15,7 +15,7 @@ class TestChap04(unittest.TestCase):
 
     def setUp(self) -> None:
         self.negA = [-13, -13, -25, -20, -3, -16, -23, -18, -20, -17, -12, -5, -22, -15, -4, -7]
-        self.testA = testA = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
+        self.testA = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
         return super().setUp()
 
     def tearDown(self) -> None:
@@ -45,7 +45,7 @@ class TestChap04(unittest.TestCase):
         should return single largest number in the array
         """
         # assert (5, 5, -3)
-        self.assertEqual(subs(self.testA, 1, len(self.testA)), (5, 5, -3))
+        self.assertEqual(subs(self.negA, 1, len(self.negA)), (5, 5, -3))
     
     def test_brute_force_find_max_subarray(self):
         """
