@@ -63,3 +63,24 @@ def find_max_subarray(A, low, high):
             return (right_low, right_high, right_sum)
         else: return (cross_low, cross_high, cross_sum)
 
+def brute_max_subarray(A):
+    """
+    find max sub-array using brute force method.
+    return: tuple(low (int), high (int), sum (int))
+
+    parameters: 
+    A : array like of numbers (List)
+    """
+    max_sum = -math.inf
+    for i in range(1, len(A) + 1): 
+        # since this is exclude the high thus the top limit should high + 1
+        sum = 0
+        for j in range(i, len(A) + 1):
+            # the i as starting point is because there is the max value in the same low, and high index
+            sum += A[idx(j)]
+            if sum > max_sum:
+                max_sum = sum
+                low = i
+                high = j
+
+    return (low, high, max_sum)

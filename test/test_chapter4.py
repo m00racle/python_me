@@ -5,6 +5,7 @@ sys.path.append(tested_path)
 
 import unittest
 from chapter4 import find_max_cross_subarray as cross, find_max_subarray as subs
+from chapter4 import brute_max_subarray as brute
 
 class TestChap04(unittest.TestCase):
     """
@@ -40,8 +41,24 @@ class TestChap04(unittest.TestCase):
     def test_find_max_subarray_negA(self):
         """
         test finding the max on array full of negative numbers
+        should return single largest number in the array
         """
         # assert (5, 5, -3)
+        self.assertEqual(subs(self.testA, 1, len(self.testA)), (5, 5, -3))
+    
+    def test_brute_force_find_max_subarray(self):
+        """
+        test if the brute force find consistent result
+        """
+        self.assertEqual(brute(self.testA), (8, 11, 43))
+    
+    def test_brute_find_max_sub_array(self):
+        """
+        test the brute force for all negative array
+        """
+        self.assertEqual(brute(self.negA), (5, 5, -3))
+    
+    
     
 if __name__ == "__main__":
     unittest.main(verbosity=2)
