@@ -141,20 +141,20 @@ def iterative_max_subarray(A, low, high):
 
 def main():
     """
-    main run
+    main run finding the number of sample where the recursive performance overtakes the brute force
+    I choose all negative list (A) in order to make the worst case scenario for both 
+    all negatives with the largest value (-1) in the end ensure all algorithm will run to the end of the input list
     """
     np.random.seed(10)
 
     brute_time = -math.inf
     div_time = math.inf
-    A = [-13, -13, -25, -20, -3, -16, -23, -18, -20, -17, -12, -5, -22, -15, -4, -7, 
-    -13, -13, -25, -20, 7,
-    13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
+    A = [-2,-1]
     n = len(A)
     
     # print(A)
     while brute_time < div_time:
-        A.insert(0, -1)
+        A.insert(0, -10)
         # find max using brute force
         start_time = perf_counter()
         brute_result= brute_max_subarray(A, 1, len(A))
@@ -163,7 +163,7 @@ def main():
 
         # find max using divide and conquer
         start_time = perf_counter()
-        div_result = find_brute_subarray(A, 1, len(A))
+        div_result = find_max_subarray(A, 1, len(A))
         end_time = perf_counter()
         div_time = end_time - start_time
         
