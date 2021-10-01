@@ -24,7 +24,7 @@ class TestChap04(unittest.TestCase):
         # prepare
         crossA = [-1, -3, 12, -6, 10, -3, 7, 3, -12, 8, -1]
         # assert
-        self.assertEqual(cross(crossA, 0, len(crossA)//2, len(crossA)), (3, 8, 23))
+        self.assertEqual(cross(crossA, 1, len(crossA)//2, len(crossA)), (3, 8, 23))
         
     def test_find_max_subarray(self):
         """
