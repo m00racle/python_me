@@ -65,6 +65,31 @@ def find_max_subarray(A, low, high):
             return (right_low, right_high, right_sum)
         else: return (cross_low, cross_high, cross_sum)
 
+def find_brute_subarray(A, low, high):
+    """
+    find max subarray of delta values.
+    return: tuple(low (int), high (int), sum (int))
+
+    parameters: 
+    A : array like of numbers (List)
+    low : index of lowest position in array to be inspected (int)
+    high : index of highest position in array to be inspected (int)
+    """
+    if high - low < 37:
+        return (brute_max_subarray(A, low, high))
+    else:
+        mid = (low + high) // 2
+        # the recursion is not merging but COMBINATION: the low and high parameters passed is constant!
+        (left_low, left_high, left_sum) = find_max_subarray(A, low, mid)
+        (right_low, right_high, right_sum) = find_max_subarray(A, mid + 1, high)
+        (cross_low, cross_high, cross_sum) = find_max_cross_subarray(A, low, mid, high)
+        # choose which to return
+        if left_sum >= right_sum and left_sum >= cross_sum :
+            return (left_low, left_high, left_sum)
+        elif right_sum >= left_sum and right_sum >= cross_sum:
+            return (right_low, right_high, right_sum)
+        else: return (cross_low, cross_high, cross_sum)
+
 def brute_max_subarray(A, low, high):
     """
     find max sub-array using brute force method.
@@ -122,9 +147,14 @@ def main():
 
     brute_time = -math.inf
     div_time = math.inf
-    n = 10
+    A = [-13, -13, -25, -20, -3, -16, -23, -18, -20, -17, -12, -5, -22, -15, -4, -7, 
+    -13, -13, -25, -20, 7,
+    13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
+    n = len(A)
+    
+    # print(A)
     while brute_time < div_time:
-        A = np.random.randint(-10,5, n)
+        A.insert(0, -1)
         # find max using brute force
         start_time = perf_counter()
         brute_result= brute_max_subarray(A, 1, len(A))
@@ -133,13 +163,13 @@ def main():
 
         # find max using divide and conquer
         start_time = perf_counter()
-        div_result = find_max_subarray(A, 1, len(A))
+        div_result = find_brute_subarray(A, 1, len(A))
         end_time = perf_counter()
         div_time = end_time - start_time
         
-        n += 10
+        n += 1
     # print the report
-    print(f"number of samples: {n}")
+    print(f"number of samples: {len(A)}")
     print(f"runnig time brute force: {brute_time}")
     print(f'brute force: {brute_result}')
     print(f"runnig time div-conquer: {div_time}")
