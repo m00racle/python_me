@@ -4,6 +4,8 @@ module_path = os.path.normpath(os.path.dirname(__file__) + "/../../modules")
 sys.path.append(module_path)
 
 from idx import idx
+import numpy as np
+from time import perf_counter, perf_counter_ns
 
 def find_max_cross_subarray(A, low, mid, high) -> tuple :
     """
@@ -111,3 +113,38 @@ def iterative_max_subarray(A, low, high):
             max_right = current_right
 
     return (max_left, max_right, max_sum)
+
+def main():
+    """
+    main run
+    """
+    np.random.seed(10)
+
+    brute_time = -math.inf
+    div_time = math.inf
+    n = 10
+    while brute_time < div_time:
+        A = np.random.randint(-10,5, n)
+        # find max using brute force
+        start_time = perf_counter()
+        brute_result= brute_max_subarray(A, 1, len(A))
+        end_time = perf_counter()
+        brute_time = end_time - start_time
+
+        # find max using divide and conquer
+        start_time = perf_counter()
+        div_result = find_max_subarray(A, 1, len(A))
+        end_time = perf_counter()
+        div_time = end_time - start_time
+        
+        n += 10
+    # print the report
+    print(f"number of samples: {n}")
+    print(f"runnig time brute force: {brute_time}")
+    print(f'brute force: {brute_result}')
+    print(f"runnig time div-conquer: {div_time}")
+    print(f'divide and conquer: {div_result}')
+
+
+if __name__ == "__main__":
+    main()
