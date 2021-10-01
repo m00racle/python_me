@@ -6,6 +6,7 @@ sys.path.append(tested_path)
 import unittest
 from chapter4 import find_max_cross_subarray as cross, find_max_subarray as subs
 from chapter4 import brute_max_subarray as brute
+from chapter4 import iterative_max_subarray as iter
 
 class TestChap04(unittest.TestCase):
     """
@@ -50,15 +51,20 @@ class TestChap04(unittest.TestCase):
         """
         test if the brute force find consistent result
         """
-        self.assertEqual(brute(self.testA), (8, 11, 43))
+        self.assertEqual(brute(self.testA, 1, len(self.testA)), (8, 11, 43))
     
     def test_brute_find_max_sub_array(self):
         """
         test the brute force for all negative array
         """
-        self.assertEqual(brute(self.negA), (5, 5, -3))
+        self.assertEqual(brute(self.negA, 1, len(self.negA)), (5, 5, -3))
     
+    def test_iterative_finding_max_positive_sub_array(self):
+        """
+        testing iterative finding positive sub_array
+        """
+        self.assertEqual(iter(self.testA, 1, len(self.testA)), (8, 11, 43))
     
-    
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
