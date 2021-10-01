@@ -12,9 +12,13 @@ class TestChap04(unittest.TestCase):
     """
 
     def setUp(self) -> None:
+        self.negA = [-13, -13, -25, -20, -3, -16, -23, -18, -20, -17, -12, -5, -22, -15, -4, -7]
+        self.testA = testA = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
         return super().setUp()
 
     def tearDown(self) -> None:
+        self.negA = []
+        self.testA = []
         return super().tearDown()
     
     def test_find_cross_max(self):
@@ -30,10 +34,14 @@ class TestChap04(unittest.TestCase):
         """
         test finding maximum sub-array
         """
-        # prepare
-        testA = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
-        # assert (7, 10, 43)
-        self.assertEqual(subs(testA, 1, len(testA)), (8, 11, 43))
+        # assert (8, 11, 43)
+        self.assertEqual(subs(self.testA, 1, len(self.testA)), (8, 11, 43))
+    
+    def test_find_max_subarray_negA(self):
+        """
+        test finding the max on array full of negative numbers
+        """
+        # assert (5, 5, -3)
     
 if __name__ == "__main__":
     unittest.main(verbosity=2)
