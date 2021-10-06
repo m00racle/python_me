@@ -14,20 +14,16 @@ def matrix_product(A,B):
     A = List of List number represent matrix n x m 
     B = List of List number represent matrix n x m
     """
-    rowA = len(A)
-    colA = len(A[0])
-    rowB = len(B)
-    colB = len(B[0])
     # C = A.B
     C = []
     
-    for i in range(rowA):
+    for i in range(len(A)):
         # assert matrix error
         if len(A[i]) != len(B): raise Exception("matrix shape mismatch")
         C.append([])
         for j in range(len(B[i])):
             C[i].append(0)
-            for k in range(rowB):
+            for k in range(len(B)):
                 # assert matrix error
                 if len(B[k]) != len(B[i]) : raise Exception("matrix B shape non symetric")
                 C[i][j] = C[i][j] + A[i][k] * B[k][j]
