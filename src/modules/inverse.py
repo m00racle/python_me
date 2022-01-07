@@ -11,4 +11,7 @@ def inverseOf(a:int, n:int):
     a:int = number which inverse is in question
     n:int = mod (ring of Z) base 
     """
-    return pulv.gcd(n,a).t
+    if pulv.gcd(n,a).value != 1 :
+        raise ValueError("the number is not relatively prime to the mod base!")
+    else:
+        return pulv.gcd(n,a).t
