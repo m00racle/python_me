@@ -1,3 +1,4 @@
+from unittest import result
 import pulverizer as pulv
 
 """
@@ -14,4 +15,9 @@ def inverseOf(a:int, n:int):
     if pulv.gcd(n,a).value != 1 :
         raise ValueError("the number is not relatively prime to the mod base!")
     else:
-        return pulv.gcd(n,a).t
+        result = pulv.gcd(n,a).t
+        while result <= 0:
+            # keep adding base n until the inverse result is positive
+            result += n
+        
+        return result
