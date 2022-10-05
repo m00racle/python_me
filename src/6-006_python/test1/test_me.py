@@ -33,6 +33,8 @@ def fruit_basket(*ordering, **kwargs) -> int:
             subtotal = kwargs[key] * basket_price[key]
             print(key, '->', kwargs[key], ' x ', basket_price[key], ' = ', subtotal)
             total += subtotal
+        else :
+            print(key, '-> Not available')
     
     print("the total cost for all order: ", total , " x ", orders)
     return total * orders
